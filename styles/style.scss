@@ -1,6 +1,63 @@
 $imgWidth: 100%;
 $blueColor: #011847;
 $greenColor: #84bc22;
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+section {
+  padding: 30px 0;
+}
+img {
+  width: 100%;
+}
+small {
+  font-size: small;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.button {
+  background: #84bc22;
+  color: #fff;
+  border: 1px solid #84bc22;
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 150px;
+  width: 100%;
+  display: inline-block;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.button:hover {
+  color: #84bc22;
+  background: transparent;
+}
+.dark {
+  color: #fff;
+}
+.dark .button {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+}
+.flex-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.background--dark {
+  background-color: #262a32;
+}
+h2.section_title {
+  span {
+    display: block;
+    font-size: 18px;
+  }
+}
 .container {
   max-width: 1170px;
   width: 100%;
@@ -71,5 +128,98 @@ header {
   .user-utilities > span {
     display: inline-block;
     margin-left: 32px;
+  }
+}
+
+//banner
+
+.banner-slider_item {
+  min-height: 505px;
+  background: url("../images/slider1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-position: center;
+}
+
+.promo-box {
+  background: #84bc22;
+  color: #fff;
+  border-radius: 5px;
+
+  .promo-box_content {
+    min-height: 335px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("../images/palm.png");
+    background-size: 58%;
+    background-position: 11% 121%;
+    background-repeat: no-repeat;
+
+    h2 {
+      font-size: 100px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+.follow-facebook {
+  .button {
+    background: transparent;
+    color: #3a5b96;
+    border-color: #3a5b96;
+    display: inline-block;
+  }
+  .button:hover {
+    color: #fff;
+    background: #3a5b96;
+    text-decoration: none;
+  }
+}
+.item .item_wrap {
+  background: #fff;
+  border-radius: 11px;
+  overflow: hidden;
+  color: #45413e;
+}
+.popular-items {
+  .item {
+    margin: 15px 0px;
+    color: #45413e;
+    .item_wrap {
+      background: #fff;
+      border-radius: 11px;
+      overflow: hidden;
+    }
+    .item_caption {
+      padding: 12px 20px;
+      line-height: 1;
+    }
+  }
+}
+.osf-banner {
+  background-image: url(../images/banner-osf.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 445px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills-section {
+  background-color: #45413e;
+  img {
+    width: auto;
+  }
+  h4 {
+    text-transform: uppercase;
+    font-size: 18px;
   }
 }

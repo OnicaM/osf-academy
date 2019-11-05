@@ -10,10 +10,24 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <title>OSF Academy</title>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+
     <script src="js/script.js"></script>
   </head>
+
   <body>
     <header>
       <div class="container">
@@ -24,10 +38,10 @@
           </div>
           <nav>
             <ul>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Library</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#company">Company</a></li>
+              <li><a href="#library">Library</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </nav>
           <div class="language-switch">
@@ -54,9 +68,216 @@
         </div>
       </div>
     </header>
-
-    <section class="banner">
-      <div class="row"></div>
-    </section>
+    <div id="main">
+      <section class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <div class="banner-slider">
+                <div class="banner-slider_item">
+                  <!-- <img src="images/slider1.jpg" alt="Slider1" /> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 flex-style">
+              <div class="promo-box text-center">
+                <div class="promo-box_content">
+                  <h2>55%</h2>
+                  <p>
+                    Summer
+                    <br />
+                    sales
+                  </p>
+                </div>
+              </div>
+              <div class="follow-facebook text-center">
+                <h4>Follow us on Facebook</h4>
+                <p>
+                  <small>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                  </small>
+                </p>
+                <a href="#" class="button">Follow</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="popular-items background--dark">
+        <div class="container dark text-center">
+          <h3 class="section_title">Popular Items</h3>
+          <div class="row">
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="more">
+            <a href="#" class="button">Learn More</a>
+          </div>
+        </div>
+      </section>
+      <section class="osf-banner">
+        <div class="container dark text-center">
+          <h2 class="section_title">Banner OSF Theme</h2>
+          <p>
+            <small
+              >Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed
+            </small>
+          </p>
+        </div>
+      </section>
+      <section class="featured-products background--dark">
+        <div class="container dark text-center">
+          <h2 class="section_title">
+            Featured Products
+            <span> Unde omnis iste natus error sit voluptatem</span>
+          </h2>
+          <div class="row">
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-2 col-lg-3 item">
+              <div class="item_wrap">
+                <img src="images/popularItems/img1.png" alt="Product" />
+                <div class="item_caption">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p class="price">$ 799.55</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="skills-section">
+        <div class="container dark">
+          <div class="row">
+            <div class="col col-md-1 col-lg-4">
+              <img src="images/focus.png" alt="focus" />
+              <h4>Focus</h4>
+              <p>
+                Our unwavering focus on superior service delivery and building
+                next generation competencies laudantium, totam rem aperiam,
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                quia voluptas sit aspernatur aut odit aut fugit, sed
+              </p>
+            </div>
+            <div class="col col-md-1 col-lg-4">
+              <img src="images/method.png" alt="focus" />
+              <h4>method</h4>
+              <p>
+                A standardized methodology designed to deliver measurable
+                business results and predictable costs
+              </p>
+            </div>
+            <div class="col col-md-1 col-lg-4">
+              <img src="images/knowledge.png" alt="focus" />
+              <h4>Knowledge</h4>
+              <p>
+                A highly skilled, proactive workforce that reliably improves
+                each client’s ROI while mitigating their business risk
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
