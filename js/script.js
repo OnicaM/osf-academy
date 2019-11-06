@@ -24,3 +24,15 @@ window.onload = function() {
     });
   });
 };
+
+function toggleNav($trigger, $selector) {
+  $trigger.on("click", function() {
+    $selector.toggleClass("js--open");
+  });
+}
+
+function init() {
+  toggleClass($("li.has-children > a"), $(">ul"));
+}
+
+init();

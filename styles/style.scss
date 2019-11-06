@@ -85,12 +85,15 @@ h2.section_title {
       text-transform: uppercase;
       color: $blueColor;
       font-size: 31.65px;
+      font-weight: 900;
+      letter-spacing: 6.33px;
     }
   }
 }
 header {
   border-bottom: 1px solid #e8e2d6;
   padding: 10px 0;
+  position: relative;
   .container--content {
     display: flex;
     justify-content: space-between;
@@ -111,10 +114,41 @@ header {
         display: inline-block;
         text-transform: uppercase;
         padding: 0 12px;
+
         a {
           color: #45413e;
           text-decoration: none;
+          font-size: 14px;
         }
+      }
+      li.has-children {
+        > ul.level2 {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: #fff;
+          z-index: 2;
+          -webkit-column-count: 3;
+          -moz-column-count: 3;
+          column-count: 3;
+          background-color: #262a32;
+          padding: 50px 60px;
+          display: none;
+        }
+      }
+      li.has-children:hover > ul.level2 {
+        display: block;
+      }
+    }
+    ul.level2 li {
+      display: block;
+
+      a {
+        color: #fff;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 31px;
       }
     }
   }
