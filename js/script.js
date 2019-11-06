@@ -31,6 +31,15 @@ function toggleNav($trigger, $selector) {
   });
 }
 
+$(".banner-slider").slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: "linear",
+  arrows: false
+});
+
 function init() {
   toggleClass($("li.has-children > a"), $(">ul"));
 }

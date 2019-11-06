@@ -194,13 +194,47 @@ header .user-utilities > span {
   margin-left: 32px;
 }
 
-.banner-slider_item {
+/*Slick slider*/
+ul.slick-dots {
+  list-style: none;
+  margin: 0;
+  vertical-align: bottom;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 60px;
+  bottom: 50px;
+  text-align: center;
+}
+
+ul.slick-dots li {
+  display: inline-block;
+  font-size: 0;
+  margin-right: 10px;
+}
+
+ul.slick-dots li button {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  font-size: 0;
+  border: none;
+}
+
+ul.slick-dots li.slick-active button {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.banner-slider {
   min-height: 505px;
   background: url("../images/slider1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
   background-position: center;
+  padding: 45px 60px;
 }
 
 .promo-box {
