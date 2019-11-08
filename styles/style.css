@@ -152,6 +152,7 @@ header nav ul li a {
   color: #45413e;
   text-decoration: none;
   font-size: 14px;
+  padding: 31px 0px;
 }
 
 header nav ul li.has-children > ul.level2 {
@@ -169,11 +170,13 @@ header nav ul li.has-children > ul.level2 {
 }
 
 header nav ul li.has-children:hover > ul.level2 {
-  display: block;
+  display: table;
+  width: 100%;
 }
 
 header nav ul.level2 li {
   display: block;
+  padding-left: 0;
 }
 
 header nav ul.level2 li a {
@@ -181,6 +184,36 @@ header nav ul.level2 li a {
   text-transform: none;
   font-size: 16px;
   line-height: 31px;
+}
+
+header nav ul.level2 > li.has-children {
+  display: table-cell;
+}
+
+header nav ul.level2 > li.has-children > span {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 900;
+}
+
+header nav ul.level2 > li.has-children:first-child > .level3 {
+  -webkit-column-count: 3;
+          column-count: 3;
+}
+
+header nav ul.level2 > li.has-children:last-child {
+  width: 15%;
+}
+
+header .has-children > ul.level2:after {
+  content: "";
+  background: url("../images/image-nav.png");
+  display: table-cell;
+  width: 22%;
+  height: 280px;
+  background-size: cover;
+  border-radius: 5px;
+  background-repeat: no-repeat;
 }
 
 header .user-utilities img {
@@ -294,20 +327,24 @@ ul.slick-dots li.slick-active button {
   color: #45413e;
 }
 
-.popular-items .item {
+.products--popular .item {
   margin: 15px 0px;
   color: #45413e;
 }
 
-.popular-items .item .item_wrap {
+.products--popular .item .item_wrap {
   background: #fff;
   border-radius: 11px;
   overflow: hidden;
 }
 
-.popular-items .item .item_caption {
+.products--popular .item .item_caption {
   padding: 12px 20px;
   line-height: 1;
+}
+
+.products--featured .item {
+  padding: 0 15px;
 }
 
 .osf-banner {
@@ -331,11 +368,19 @@ ul.slick-dots li.slick-active button {
   background-color: #45413e;
 }
 
-.skills-section img {
-  width: auto;
+.skills-section .skill-item_wrap {
+  padding-left: 70px;
+  position: relative;
 }
 
-.skills-section h4 {
+.skills-section .skill-item_wrap img {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skills-section .skill-item_wrap h4 {
   text-transform: uppercase;
   font-size: 18px;
 }

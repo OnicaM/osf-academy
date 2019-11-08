@@ -119,6 +119,7 @@ header {
           color: #45413e;
           text-decoration: none;
           font-size: 14px;
+          padding: 31px 0px;
         }
       }
       li.has-children {
@@ -138,19 +139,46 @@ header {
         }
       }
       li.has-children:hover > ul.level2 {
+        display: table;
+        width: 100%;
+      }
+    }
+    ul.level2 {
+      li {
         display: block;
+        padding-left: 0;
+        a {
+          color: #fff;
+          text-transform: none;
+          font-size: 16px;
+          line-height: 31px;
+        }
+      }
+      > li.has-children {
+        display: table-cell;
+        > span {
+          font-size: 14px;
+          color: #fff;
+          font-weight: 900;
+        }
+      }
+      > li.has-children:first-child > .level3 {
+        column-count: 3;
+      }
+      > li.has-children:last-child {
+        width: 15%;
       }
     }
-    ul.level2 li {
-      display: block;
-
-      a {
-        color: #fff;
-        text-transform: none;
-        font-size: 16px;
-        line-height: 31px;
-      }
-    }
+  }
+  .has-children > ul.level2:after {
+    content: "";
+    background: url("../images/image-nav.png");
+    display: table-cell;
+    width: 22%;
+    height: 280px;
+    background-size: cover;
+    border-radius: 5px;
+    background-repeat: no-repeat;
   }
   .user-utilities {
     img {
@@ -255,7 +283,7 @@ ul.slick-dots {
   overflow: hidden;
   color: #45413e;
 }
-.popular-items {
+.products--popular {
   .item {
     margin: 15px 0px;
     color: #45413e;
@@ -270,6 +298,11 @@ ul.slick-dots {
     }
   }
 }
+.products--featured {
+  .item {
+    padding: 0 15px;
+  }
+}
 .osf-banner {
   background-image: url(../images/banner-osf.jpg);
   background-size: cover;
@@ -282,11 +315,18 @@ ul.slick-dots {
 }
 .skills-section {
   background-color: #45413e;
-  img {
-    width: auto;
-  }
-  h4 {
-    text-transform: uppercase;
-    font-size: 18px;
+  .skill-item_wrap {
+    padding-left: 70px;
+    position: relative;
+    img {
+      width: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-size: 18px;
+    }
   }
 }
