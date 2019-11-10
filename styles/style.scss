@@ -26,7 +26,10 @@ small {
 a:hover {
   text-decoration: none;
 }
-
+.list {
+  list-style: none;
+  padding: 0;
+}
 .button {
   background: #84bc22;
   color: #fff;
@@ -376,8 +379,22 @@ ul.slick-dots {
 }
 
 /*Footer*/
-footer * {
-  color: #45413e;
+footer {
+  padding: 40px 0;
+  * {
+    color: #45413e;
+  }
+  .footer-info--contact {
+    padding-top: 40px;
+  }
+  .footer-info {
+    > h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+  }
   .footer-info_description ul {
     list-style: none;
     padding: 0;
@@ -387,10 +404,22 @@ footer * {
       line-height: 31px;
     }
   }
+  .list--social {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      display: inline-block;
+      font-size: 20px;
+      padding: 0 10px;
+      line-height: 1;
+    }
+  }
 }
 
 .footer-category {
-  .footer-info_description ul {
-    column-count: 3;
+  .footer-info_description > ul {
+    vertical-align: top;
+    width: 33.33%;
+    float: left;
   }
 }

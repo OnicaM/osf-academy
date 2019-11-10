@@ -1,26 +1,24 @@
 window.onload = function() {
-  var request = new XMLHttpRequest();
+  var requestPage = new XMLHttpRequest();
 
-  request.onreadystatechange = function() {
-    if (request.readyState === 4) {
-      document.getElementById("main").innerHTML = request.responseText;
+  requestPage.onreadystatechange = function() {
+    if (requestPage.readyState === 4) {
+      document.getElementById("main").innerHTML = requestPage.responseText;
     }
   };
-
-  console.log(request);
 
   var link = document.querySelectorAll("nav ul > li > a");
 
   link.forEach((item, index) => {
-    console.log(item);
+    //console.log(item);
 
     item.addEventListener("click", function(e) {
       e.preventDefault();
       var url = this.href;
       var urlSplit = url.split("#");
       console.log(urlSplit);
-      request.open("GET", "pages/" + urlSplit[1] + ".html");
-      request.send();
+      requestPage.open("GET", "pages/" + urlSplit[1] + ".html");
+      requestPage.send();
     });
   });
 
@@ -54,7 +52,7 @@ function displayData(data) {
   data.forEach(item => {
     var div = document.createElement("div");
     var divF = document.createElement("div");
-    div.classList.add("col", "col-sm-12", "col-md-6", "col-lg-3", "item");
+    div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
     divF.classList.add("item");
     div.innerHTML = `<div class="item_wrap">
         <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
@@ -101,6 +99,19 @@ $(".banner-slider").slick({
   arrows: false
 });
 
-function init() {}
+function getCurrentYear() {
+  document.querySelector(
+    ".copyright .year"
+  ).innerHTML = new Date().getFullYear();
+}
+
+function showHide() {
+  var items = document.querySelectorAll(".products--popular .item");
+}
+
+function init() {
+  getCurrentYear();
+  //showHide();
+}
 
 init();

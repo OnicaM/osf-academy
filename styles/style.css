@@ -29,6 +29,11 @@ a:hover {
   text-decoration: none;
 }
 
+.list {
+  list-style: none;
+  padding: 0;
+}
+
 .button {
   background: #84bc22;
   color: #fff;
@@ -433,23 +438,55 @@ ul.slick-dots li.slick-active button {
 }
 
 /*Footer*/
+footer {
+  padding: 40px 0;
+}
+
 footer * {
   color: #45413e;
 }
 
-footer * .footer-info_description ul {
+footer .footer-info--contact {
+  padding-top: 40px;
+}
+
+footer .footer-info > h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+footer .footer-info_description ul {
   list-style: none;
   padding: 0;
 }
 
-footer * .footer-info_description ul li {
+footer .footer-info_description ul li {
   display: block;
   font-size: 13px;
   line-height: 31px;
 }
 
-.footer-category .footer-info_description ul {
-  -webkit-column-count: 3;
-          column-count: 3;
+footer .list--social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+footer .list--social li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 10px;
+  line-height: 1;
+}
+
+.footer-category .footer-info_description > ul {
+  vertical-align: top;
+  width: 33.33%;
+  float: left;
 }
 /*# sourceMappingURL=style.css.map */
