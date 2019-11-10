@@ -44,6 +44,10 @@ window.onload = function() {
   var promise = get("../json/popularItems.json");
 
   promise.then(items => displayData(items.products));
+
+  var promiseFeatured = get("..json/featuredProducts.json");
+
+  promiseFeatured.then(items => displayFeaturedProducts(items));
 };
 
 function displayData(data) {
@@ -84,6 +88,28 @@ function displayData(data) {
     adaptiveHeight: true
   });
 }
+
+function displayFeaturedProducts(data) {
+  var featuredContainer = document.querySelector(".products--featured .row");
+  data.forEach(item => {
+    var div = document.createElement("div");
+
+    div.classList.add("item");
+
+    divF.innerHTML = `<div class="item_wrap">
+          <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+          <div class="item_caption">
+          <p>${item.name}</p>
+          <p class="price">$ ${item.price}</p>
+          </div>
+          </div>`;
+
+    if (featuredContainer) {
+      featuredContainer.appendChild(div);
+    }
+  });
+}
+
 function toggleNav($trigger, $selector) {
   $trigger.on("click", function() {
     $selector.toggleClass("js--open");
