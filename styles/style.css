@@ -1,6 +1,12 @@
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 900;
 }
 
 section {
@@ -13,6 +19,10 @@ img {
 
 small {
   font-size: small;
+}
+
+.more {
+  margin-top: 50px;
 }
 
 a:hover {
@@ -32,6 +42,7 @@ a:hover {
   text-transform: uppercase;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-align: center;
 }
 
 .button:hover {
@@ -72,9 +83,10 @@ h2.section_title span {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1210px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
@@ -113,7 +125,7 @@ h2.section_title span {
 
 header {
   border-bottom: 1px solid #e8e2d6;
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   position: relative;
 }
 
@@ -145,14 +157,13 @@ header nav ul {
 header nav ul li {
   display: inline-block;
   text-transform: uppercase;
-  padding: 0 12px;
 }
 
 header nav ul li a {
   color: #45413e;
   text-decoration: none;
   font-size: 14px;
-  padding: 31px 0px;
+  padding: 31px 12px;
 }
 
 header nav ul li.has-children > ul.level2 {
@@ -172,6 +183,17 @@ header nav ul li.has-children > ul.level2 {
 header nav ul li.has-children:hover > ul.level2 {
   display: table;
   width: 100%;
+}
+
+header nav ul.level1 > li > a {
+  border-bottom: 5px solid transparent;
+  display: block;
+}
+
+header nav ul.level1 > li:hover > a {
+  background: #262a32;
+  color: #fff;
+  border-color: #84bc22;
 }
 
 header nav ul.level2 li {
@@ -249,8 +271,8 @@ ul.slick-dots li {
 ul.slick-dots li button {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 100%;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 12px;
   font-size: 0;
   border: none;
 }
@@ -258,16 +280,41 @@ ul.slick-dots li button {
 ul.slick-dots li.slick-active button {
   background: transparent;
   border: 2px solid #fff;
+  width: 15px;
+  height: 15px;
 }
 
-.banner-slider {
-  min-height: 505px;
-  background: url("../images/slider1.jpg");
+.banner-slider .banner-slider_item {
+  background-image: url("../images/slider1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
   background-position: center;
   padding: 45px 60px;
+}
+
+.banner-slider .banner-slider_item .banner-slider_item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  min-height: 415px;
+  padding: 30px 0 50px 0;
+}
+
+.banner-slider .banner-slider_item .banner-slider_item-wrap .banner-slider_description {
+  max-width: 365px;
+}
+
+.banner-slider .banner-slider_item[data-slick-index*="1"] {
+  background-image: url("../images/slider1.jpg");
 }
 
 .promo-box {
@@ -383,5 +430,26 @@ ul.slick-dots li.slick-active button {
 .skills-section .skill-item_wrap h4 {
   text-transform: uppercase;
   font-size: 18px;
+}
+
+/*Footer*/
+footer * {
+  color: #45413e;
+}
+
+footer * .footer-info_description ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer * .footer-info_description ul li {
+  display: block;
+  font-size: 13px;
+  line-height: 31px;
+}
+
+.footer-category .footer-info_description ul {
+  -webkit-column-count: 3;
+          column-count: 3;
 }
 /*# sourceMappingURL=style.css.map */
