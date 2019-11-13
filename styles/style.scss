@@ -48,7 +48,8 @@ a:hover {
   color: #84bc22;
   background: transparent;
 }
-.dark {
+.dark,
+.dark a {
   color: #fff;
 }
 .dark .button {
@@ -77,40 +78,44 @@ h2.section_title {
   padding: 0 20px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  img {
-    max-width: 60px;
-    width: $imgWidth;
-    display: inline-block;
-    margin-right: 7px;
-  }
-  div.logo-text {
-    span {
-      color: $greenColor;
-      font-size: 18px;
-      display: block;
-      line-height: 1;
-    }
-    span:first-child {
-      text-transform: uppercase;
-      color: $blueColor;
-      font-size: 31.65px;
-      font-weight: 900;
-      letter-spacing: 6.33px;
-    }
-  }
-}
 header {
   border-bottom: 1px solid #e8e2d6;
   padding: 10px 0 0 0;
   position: relative;
-  .container--content {
+  .container_content-mobile {
+    display: none;
+  }
+  .container_content-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        max-width: 60px;
+        width: $imgWidth;
+        display: inline-block;
+        margin-right: 7px;
+      }
+      div.logo-text {
+        span {
+          color: $greenColor;
+          font-size: 18px;
+          display: block;
+          line-height: 1;
+        }
+        span:first-child {
+          text-transform: uppercase;
+          color: $blueColor;
+          font-size: 31.65px;
+          font-weight: 900;
+          letter-spacing: 6.33px;
+        }
+      }
+    }
   }
   nav,
   .coin-switch,
@@ -219,20 +224,85 @@ header {
     display: inline-block;
     margin-left: 32px;
   }
-}
 
+  @media screen and (max-width: 992px) {
+    .container_content-desktop {
+      display: none;
+    }
+    .container_content-mobile {
+      display: block;
+      text-align: center;
+      padding: 9px 20px 8px 40px;
+      position: relative;
+
+      .toggle-nav {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 20px;
+      }
+      .logo {
+        display: inline-block;
+        max-width: 45px;
+      }
+      nav.nav-mobile {
+        display: block;
+        position: absolute;
+        top: 100%;
+        background-color: #262a32;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        .level1 li {
+          display: block;
+          a {
+            padding: 15px;
+            border: none;
+            font-weight: 900;
+            text-align: left;
+          }
+        }
+        .level1 > li.has-children {
+          > a {
+            position: relative;
+            padding-right: 40px;
+            > i {
+              position: absolute;
+              top: 50%;
+              transform: translate(0, -50%);
+              right: 5px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width:992px) {
+  header {
+    padding-top: 0;
+
+    .container {
+      padding: 0;
+    }
+  }
+}
 //banner
 /*Slick slider*/
+
 ul.slick-dots {
   list-style: none;
   margin: 0;
   vertical-align: bottom;
-  position: absolute;
+  position: static;
   left: 0;
   right: 0;
   padding: 0 60px;
   bottom: 50px;
   text-align: center;
+
   li {
     display: inline-block;
     font-size: 0;
@@ -258,6 +328,9 @@ ul.slick-dots {
 }
 
 .banner-slider {
+  ul.slick-dots {
+    position: absolute;
+  }
   .banner-slider_item {
     background-image: url("../images/slider1.jpg");
     background-size: cover;
@@ -348,6 +421,23 @@ ul.slick-dots {
 .products--featured {
   .item {
     padding: 0 15px;
+    .item_caption {
+      max-width: 200px;
+      margin: 0 auto;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 110px;
+      font-size: 16px;
+      line-height: 18px;
+      .description {
+        font-size: 14px;
+        font-weight: 900;
+        color: #84bc22;
+      }
+    }
   }
 }
 .osf-banner {
@@ -360,11 +450,76 @@ ul.slick-dots {
   align-items: center;
   justify-content: center;
 }
+//Featured products
+.products--featured {
+  padding-bottom: 65px;
+  padding-top: 45px;
+
+  .slider-nav {
+    max-width: 600px;
+    width: 100%;
+    margin: 25px auto 30px auto;
+    position: relative;
+    padding: 0 40px;
+    * {
+      vertical-align: middle;
+    }
+    .divider {
+      display: inline-block;
+      width: 40px;
+      text-align: center;
+      margin: 0 2px 0px 8px;
+      span {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 2.5px;
+        display: inline-block;
+      }
+    }
+    .slick-arrow {
+      background: #2d343a;
+      border: 0;
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      margin: 3px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    .arrow-left {
+      left: 0;
+    }
+    .arrow-right {
+      right: 0;
+    }
+  }
+  .slider-nav:before {
+    content: "";
+    height: 3px;
+    background: #fff;
+    width: calc(50% - 60px / 2);
+    display: inline-block;
+  }
+  .slider-nav:after {
+    content: "";
+    height: 3px;
+    width: 46%;
+    display: inline-block;
+    background: #fff;
+    width: calc(50% - 60px / 2);
+  }
+}
+
+//Skills section
+
 .skills-section {
   background-color: #45413e;
   .skill-item_wrap {
-    padding-left: 70px;
+    padding-left: 100px;
     position: relative;
+    padding-right: 22px;
     img {
       width: auto;
       position: absolute;
@@ -375,9 +530,28 @@ ul.slick-dots {
       text-transform: uppercase;
       font-size: 18px;
     }
+    p {
+      font-size: 14px;
+      color: #868380;
+      line-height: 18px;
+    }
   }
 }
 
+/*Not Found Page*/
+.background-peach {
+  background: #f1edea;
+}
+h1.page-title {
+  text-align: center;
+}
+
+/*Services*/
+
+.filter {
+  background: #fff;
+  padding: 50px;
+}
 /*Footer*/
 footer {
   padding: 40px 0;

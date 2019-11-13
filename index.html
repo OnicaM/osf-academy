@@ -38,7 +38,7 @@
   <body>
     <header>
       <div class="container">
-        <div class="container--content">
+        <div class="container_content container_content-desktop">
           <div class="logo">
             <a href="index.html">
               <img src="images/logo.jpg" alt="OSF Logo"
@@ -103,13 +103,14 @@
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </nav>
-          <div class="language-switch">
-            <span>EN</span>
+          <div class="header-dropdowns">
+            <div class="language-switch">
+              <span>EN</span>
+            </div>
+            <div class="coin-switch">
+              <span>$US</span>
+            </div>
           </div>
-          <div class="coin-switch">
-            <span>$US</span>
-          </div>
-
           <div class="user-utilities">
             <span class="search-icon">
               <img src="svg/loupe.svg" alt="Search" />
@@ -125,13 +126,39 @@
             </span>
           </div>
         </div>
+        <div class="container_content container_content-mobile">
+          <div class="toggle-nav">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/logo.jpg" alt="OSF Logo"
+            /></a>
+          </div>
+          <nav class="nav-mobile dark">
+            <ul class="level1">
+              <li class="has-children">
+                <a href="#">Services<i class="fas fa-sort-down"></i></a>
+              </li>
+              <li class="has-children">
+                <a href="#">Company<i class="fas fa-sort-down"></i></a>
+              </li>
+              <li class="has-children">
+                <a href="#">Library<i class="fas fa-sort-down"></i></a>
+              </li>
+              <li class="has-children">
+                <a href="#">Contact Us<i class="fas fa-sort-down"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <div id="main">
       <section class="banner">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8 col-lg-9">
               <div class="banner-slider dark">
                 <div class="banner-slider_item">
                   <div class="banner-slider_item-wrap">
@@ -183,7 +210,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-3 flex-style">
+            <div class="col-12 col-md-4 col-lg-3 flex-style">
               <div class="promo-box text-center">
                 <div class="promo-box_content">
                   <h2>55%</h2>
@@ -212,7 +239,10 @@
           <h3 class="section_title">Popular Items</h3>
           <div class="row"></div>
           <div class="more">
-            <a href="#" class="button">Learn More</a>
+            <button href="#" class="button button--more">Learn More</button>
+            <!-- <button href="#" class="button button--less hidden">
+              Learn More
+            </button> -->
           </div>
         </div>
       </section>
@@ -236,6 +266,9 @@
             Featured Products
             <span> Unde omnis iste natus error sit voluptatem</span>
           </h2>
+          <div class="slider-nav">
+            <div class="divider"><span>///</span></div>
+          </div>
           <div class="row"></div>
         </div>
       </section>
@@ -244,7 +277,7 @@
         <div class="container dark">
           <div class="row">
             <div class="col col-md-12 col-lg-4">
-              <div class="skill-item_wrap">
+              <div class="skill-item_wrap skill-item_wrap-focus">
                 <img src="images/focus.png" alt="focus" />
                 <h4>Focus</h4>
                 <p>
@@ -253,8 +286,8 @@
                 </p>
               </div>
             </div>
-            <div class="col col-md-12 col-lg-4">
-              <div class="skill-item_wrap">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <div class="skill-item_wrap skill-item_wrap-method">
                 <img src="images/method.png" alt="focus" />
                 <h4>method</h4>
                 <p>
@@ -263,8 +296,8 @@
                 </p>
               </div>
             </div>
-            <div class="col col-md-12 col-lg-4">
-              <div class="skill-item_wrap">
+            <div class="col-md-12 col-md-12 col-lg-4">
+              <div class="skill-item_wrap skill-item_wrap-knolage">
                 <img src="images/knowledge.png" alt="focus" />
                 <h4>Knowledge</h4>
                 <p>

@@ -43,21 +43,23 @@ window.onload = function() {
 
   var promise = get("../json/popularItems.json");
 
-  promise.then(items => displayData(items.products));
+  promise.then(items => {
+    showData(items.products);
+  });
 
-  var promiseFeatured = get("..json/featuredProducts.json");
+  var promiseFeatured = get("../json/featuredProducts.json");
 
-  promiseFeatured.then(items => displayFeaturedProducts(items));
+  promiseFeatured.then(items => displayFeaturedProducts(items.products));
 };
 
 function displayData(data) {
   var container = document.querySelector(".products--popular .row");
-  var featuredContainer = document.querySelector(".products--featured .row");
+
   data.forEach(item => {
     var div = document.createElement("div");
-    var divF = document.createElement("div");
+
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
-    divF.classList.add("item");
+
     div.innerHTML = `<div class="item_wrap">
         <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
         <div class="item_caption">
@@ -65,48 +67,90 @@ function displayData(data) {
         <p class="price">$ ${item.price}</p>
         </div>
         </div>`;
-    divF.innerHTML = `<div class="item_wrap">
-        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-        <div class="item_caption">
-        <p>${item.name}</p>
-        <p class="price">$ ${item.price}</p>
-        </div>
-        </div>`;
+
     if (container) {
       container.appendChild(div);
     }
-    if (featuredContainer) {
-      featuredContainer.appendChild(divF);
-    }
-  });
-  $(".products--featured .row").slick({
-    dots: true,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    adaptiveHeight: true
   });
 }
 
 function displayFeaturedProducts(data) {
   var featuredContainer = document.querySelector(".products--featured .row");
+
   data.forEach(item => {
     var div = document.createElement("div");
 
     div.classList.add("item");
 
-    divF.innerHTML = `<div class="item_wrap">
+    div.innerHTML = `<div class="item_wrap">
           <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
           <div class="item_caption">
-          <p>${item.name}</p>
-          <p class="price">$ ${item.price}</p>
+          <span class="item-title">${item.name}</span>
+          <span class="description">${item.description}</span>
           </div>
           </div>`;
 
     if (featuredContainer) {
       featuredContainer.appendChild(div);
     }
+  });
+
+  $(".products--featured .row ").slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    adaptiveHeight: true,
+    appendArrows: ".slider-nav",
+    nextArrow: '<button class="fas fa-angle-right arrow-right"></button>',
+    prevArrow: '<button class="fas fa-angle-left arrow-left"></button>',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
+
+function showData(dataToDisplay) {
+  var loadMore = document.querySelector(".more .button--more"),
+    loadLess = document.querySelector(".more .button--less"),
+    showLess = dataToDisplay.slice(0, 8),
+    hiddenData = dataToDisplay.length - showLess.length,
+    showMore = dataToDisplay.splice(9, hiddenData);
+  var fullProducts = showLess.concat(showMore);
+
+  displayData(showLess);
+  console.log("show less: ", showLess);
+  console.log("show more ", showMore);
+
+  loadMore.addEventListener("click", function(e) {
+    // e.preventDefault();
+    this.classList.add("hidden");
+    loadMore.classList.remove("hidden");
+
+    displayData(showLess);
   });
 }
 
