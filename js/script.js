@@ -1,27 +1,27 @@
 window.onload = function() {
-  var requestPage = new XMLHttpRequest();
+  //===============rewrite index content with ajax==========
 
-  requestPage.onreadystatechange = function() {
-    if (requestPage.readyState === 4) {
-      document.getElementById("main").innerHTML = requestPage.responseText;
-    }
-  };
+  // var requestPage = new XMLHttpRequest();
 
-  var link = document.querySelectorAll("nav ul > li > a");
+  // requestPage.onreadystatechange = function() {
+  //   if (requestPage.readyState === 4) {
+  //     document.getElementById("main").innerHTML = requestPage.responseText;
+  //   }
+  // };
 
-  link.forEach((item, index) => {
-    //console.log(item);
+  // var link = document.querySelectorAll("nav ul > li > a");
 
-    item.addEventListener("click", function(e) {
-      e.preventDefault();
-      var url = this.href;
-      var urlSplit = url.split("#");
-      console.log(urlSplit);
-      requestPage.open("GET", "pages/" + urlSplit[1] + ".html");
-      requestPage.send();
-    });
-  });
-
+  // link.forEach((item, index) => {
+  //   item.addEventListener("click", function(e) {
+  //     e.preventDefault();
+  //     var url = this.href;
+  //     var urlSplit = url.split("#");
+  //     console.log(urlSplit);
+  //     requestPage.open("GET", "pages/" + urlSplit[1] + ".html");
+  //     requestPage.send();
+  //   });
+  // });
+  //========================================================
   function get(url) {
     return new Promise(function(resolve, reject) {
       var xhttp = new XMLHttpRequest();
@@ -50,6 +50,11 @@ window.onload = function() {
   var promiseFeatured = get("../json/featuredProducts.json");
 
   promiseFeatured.then(items => displayFeaturedProducts(items.products));
+
+  var services = get("../json/popularItems.json");
+  services.then(items => {
+    displayServicesProduct(items.products);
+  });
 };
 
 function displayData(data) {
@@ -71,6 +76,18 @@ function displayData(data) {
     if (container) {
       container.appendChild(div);
     }
+  });
+
+  $(".products--popular .row").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick"
+      }
+    ]
   });
 }
 
@@ -144,13 +161,35 @@ function showData(dataToDisplay) {
   displayData(showLess);
   console.log("show less: ", showLess);
   console.log("show more ", showMore);
+  if (loadMore) {
+    loadMore.addEventListener("click", function(e) {
+      // e.preventDefault();
+      this.classList.add("hidden");
+      loadMore.classList.remove("hidden");
 
-  loadMore.addEventListener("click", function(e) {
-    // e.preventDefault();
-    this.classList.add("hidden");
-    loadMore.classList.remove("hidden");
+      displayData(showLess);
+    });
+  }
+}
+function displayServicesProduct(data) {
+  var servicesContainer = document.querySelector(".filter-results .row");
 
-    displayData(showLess);
+  data.forEach(item => {
+    var div = document.createElement("div");
+
+    div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
+
+    div.innerHTML = `<div class="item_wrap">
+          <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+          <div class="item_caption">
+          <span class="item-title">${item.name}</span>
+          <span class="price">$ ${item.price}</span>
+          </div>
+          </div>`;
+
+    if (servicesContainer) {
+      servicesContainer.appendChild(div);
+    }
   });
 }
 
@@ -178,9 +217,16 @@ function getCurrentYear() {
 function showHide() {
   var items = document.querySelectorAll(".products--popular .item");
 }
-
+function toggleMobileNav() {
+  $(".nav-mobile").hide();
+  $(".toggle-nav").on("click", function() {
+    $(this).toggleClass("open");
+    $(".nav-mobile").slideToggle();
+  });
+}
 function init() {
   getCurrentYear();
+  toggleMobileNav();
   //showHide();
 }
 

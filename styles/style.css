@@ -431,6 +431,12 @@ ul.slick-dots li.slick-active button {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .promo-box {
+    margin: 30px 0;
+  }
+}
+
 .follow-facebook .button {
   background: transparent;
   color: #3a5b96;
@@ -449,6 +455,7 @@ ul.slick-dots li.slick-active button {
   border-radius: 11px;
   overflow: hidden;
   color: #45413e;
+  height: 100%;
 }
 
 .products--popular .item {
@@ -460,6 +467,7 @@ ul.slick-dots li.slick-active button {
   background: #fff;
   border-radius: 11px;
   overflow: hidden;
+  height: 100%;
 }
 
 .products--popular .item .item_caption {
@@ -622,9 +630,191 @@ h1.page-title {
 }
 
 /*Services*/
+.breadcrumbs ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.breadcrumbs ul li {
+  display: inline-block;
+}
+
+.breadcrumbs ul li ~ li:before {
+  content: "/";
+  display: inline-block;
+  margin: 0 15px 0px 11px;
+}
+
+.breadcrumbs ul li a {
+  color: #85c441;
+}
+
 .filter {
   background: #fff;
-  padding: 50px;
+  padding: 50px 15px;
+}
+
+.form_container-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form_container-content .form_item {
+  width: 33.33%;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #45413e;
+}
+
+.form_container-content .form_item label {
+  margin: 0;
+  width: 60px;
+  line-height: 24px;
+}
+
+.form_container-content .form_item select {
+  width: calc(100% - 60px);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #a2a09e;
+}
+
+.form_container-content .form_item select:focus {
+  outline: none;
+}
+
+.form_container-content .form_item .check-color > input {
+  margin: 0 5px;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"] {
+  font-size: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"]:before {
+  content: "";
+  height: 14px;
+  width: 14px;
+  border: 7px solid;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  border-radius: 100%;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-black:before {
+  border-color: #000;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-blue:before {
+  border-color: #43c0cf;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-darkgreen:before {
+  border-color: #3d402f;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-green:before {
+  border-color: #4aaf00;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-indigo:before {
+  border-color: #315bbd;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-orange:before {
+  border-color: #ec6115;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-red:before {
+  border-color: #dc041d;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"].input-ivory:before {
+  border-color: #efead7;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"]:checked {
+  margin-right: 10px;
+}
+
+.form_container-content .form_item .check-color input[type="checkbox"]:checked:before {
+  border-width: 3px;
+  height: 20px;
+  width: 20px;
+  margin-top: -3px;
+}
+
+@media screen and (max-width: 1024px) {
+  .form_container-content .form_item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form_container-content .form_item {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+.filter-results .item {
+  padding: 10px;
+}
+
+.filter-results .item .item_caption {
+  font-size: 16px;
+  color: #2c3e50;
+  text-align: center;
+  padding: 20px;
+}
+
+.filter-results .item .item_caption > span {
+  display: block;
+}
+
+.filter-results .item .item_caption span.price {
+  color: #bdc3c7;
+  font-weight: 700;
+}
+
+/*Page not Found*/
+.page-not-found .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-not-found .row .mega-title {
+  font-size: 113px;
+  font-weight: 900;
+  color: #84bc22;
+}
+
+.page-not-found input.input-search {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid #e8e2d6;
+  padding: 7px 20px;
+  text-transform: uppercase;
 }
 
 /*Footer*/
