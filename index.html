@@ -23,27 +23,32 @@
 
     <link rel="stylesheet" href="styles/style.css" />
     <title>OSF Academy</title>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
     <script src="slick/slick.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="slick/slick.css" />
   </head>
 
   <body>
     <header>
       <div class="container">
-        <div class="container_content container_content-desktop">
+        <div class="container_content container_content-desktop clearfix">
           <div class="logo">
-            <a href="index.html">
-              <img src="images/logo.jpg" alt="OSF Logo"
-            /></a>
-            <div class="logo-text"><span>Osf</span><span>Academy</span></div>
+            <div class="logo_content">
+              <a href="index.html">
+                <img src="images/logo.jpg" alt="OSF Logo"
+              /></a>
+              <div class="logo-text"><span>Osf</span><span>Academy</span></div>
+            </div>
           </div>
           <nav>
             <ul class="level1">
@@ -125,10 +130,14 @@
           </nav>
           <div class="header-dropdowns">
             <div class="language-switch">
-              <span>EN</span>
+              <span class="language-switch_text fas fa-sort-down">
+                <span> EN</span></span
+              >
             </div>
             <div class="coin-switch">
-              <span>$US</span>
+              <span class="coin-switch_text fas fa-sort-down">
+                <span>$US</span></span
+              >
             </div>
           </div>
           <div class="user-utilities">
@@ -158,24 +167,30 @@
           <nav class="nav-mobile dark">
             <ul class="level1">
               <li class="has-children">
-                <a href="pages/services.html"
-                  >Services<i class="fas fa-sort-down"></i
-                ></a>
+                <a href="pages/services.html">Services</a>
+                <i class="fas fa-sort-down"></i>
+                <ul class="level2">
+                  <li class="has-children">
+                    <a href="/pages/pageNotFound.html">Product Cateogories</a>
+                    <i class="fas fa-sort-down"></i>
+                  </li>
+                  <li class="has-children">
+                    <a href="/pages/pageNotFound.html">Sale</a>
+                    <i class="fas fa-sort-down"></i>
+                  </li>
+                </ul>
               </li>
               <li class="has-children">
-                <a href="pages/company.html"
-                  >Company<i class="fas fa-sort-down"></i
-                ></a>
+                <a href="pages/company.html">Company</a>
+                <i class="fas fa-sort-down"></i>
               </li>
               <li class="has-children">
-                <a href="pages/pageNotFound.html"
-                  >Library<i class="fas fa-sort-down"></i
-                ></a>
+                <a href="pages/pageNotFound.html">Library</a>
+                <i class="fas fa-sort-down"></i>
               </li>
               <li class="has-children">
-                <a href="pages/contact.html"
-                  >Contact Us<i class="fas fa-sort-down"></i
-                ></a>
+                <a href="pages/contact.html">Contact Us</a>
+                <i class="fas fa-sort-down"></i>
               </li>
             </ul>
           </nav>

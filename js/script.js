@@ -228,6 +228,7 @@ function init() {
   getCurrentYear();
   toggleMobileNav();
   //showHide();
+  $("#tabs").tabs();
 }
 
 init();

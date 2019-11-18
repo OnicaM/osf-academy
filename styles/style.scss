@@ -11,6 +11,9 @@ h1 {
   font-size: 48px;
   font-weight: 900;
 }
+p {
+  font-size: 16px;
+}
 section {
   padding: 30px 0;
 }
@@ -86,19 +89,27 @@ header {
     display: none;
   }
   .container_content-desktop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    text-align: right;
+    > * {
+      display: inline-block;
+      text-align: left;
+    }
     .logo {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      float: left;
+      // margin-top: 15px;
+      .logo_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
       img {
         max-width: 60px;
         width: $imgWidth;
         display: inline-block;
-        margin-right: 7px;
+        margin-right: 10px;
       }
       div.logo-text {
         span {
@@ -116,6 +127,31 @@ header {
         }
       }
     }
+    .header-dropdowns {
+      > div {
+        margin: 0 20px;
+      }
+      .language-switch_text,
+      .coin-switch_text {
+        position: relative;
+        padding-right: 20px;
+        cursor: pointer;
+        opacity: 50%;
+      }
+      .language-switch_text:before,
+      .coin-switch_text:before {
+        position: absolute;
+        right: 0;
+        top: 38%;
+        transform: translate(0, -50%);
+        line-height: 1;
+      }
+      .language-switch_text > span,
+      .coin-switch_text > span {
+        font-family: "Lato";
+        font-weight: normal;
+      }
+    }
   }
   nav,
   .coin-switch,
@@ -124,6 +160,7 @@ header {
     display: inline-block;
   }
   nav {
+    padding-right: 15px;
     ul {
       list-style: none;
       padding: 0;
@@ -137,7 +174,7 @@ header {
           color: #45413e;
           text-decoration: none;
           font-size: 14px;
-          padding: 31px 12px;
+          padding: 21px 12px;
         }
       }
       li.has-children {
@@ -256,23 +293,45 @@ header {
         z-index: 3;
         .level1 li {
           display: block;
+          text-align: left;
+          position: relative;
           a {
             padding: 15px;
             border: none;
             font-weight: 900;
             text-align: left;
+            display: inline-block;
           }
         }
         .level1 > li.has-children {
+          position: relative;
+          padding-right: 30px;
           > a {
-            position: relative;
-            padding-right: 40px;
-            > i {
-              position: absolute;
-              top: 50%;
-              transform: translate(0, -50%);
-              right: 5px;
-              width: 20px;
+            // position: relative;
+            // padding-right: 40px;
+          }
+          > i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            bottom: 0;
+            line-height: 44px;
+          }
+          > .level2 {
+            position: static;
+            display: block;
+            padding: 0;
+            > li.has-children {
+              i {
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+              }
+            }
+            > li:last-child {
+              width: auto;
             }
           }
         }
@@ -354,6 +413,18 @@ ul.slick-dots {
   }
   .banner-slider_item[data-slick-index*="1"] {
     background-image: url("../images/slider1.jpg");
+    text-align: center;
+    .banner-slider_description {
+      margin: 0 auto;
+    }
+  }
+  .banner-slider_item[data-slick-index*="2"] {
+    background-image: url("../images/slider1.jpg");
+    text-align: right;
+    .banner-slider_description {
+      max-width: 365px;
+      margin: 0 0 0 auto;
+    }
   }
 }
 
@@ -694,6 +765,15 @@ h1.page-title {
 
 /*Page not Found*/
 .page-not-found {
+  background: #fff;
+  padding: 50px;
+  a {
+    color: #84bc22;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 900;
+  }
   .row {
     align-items: center;
     .mega-title {
@@ -708,6 +788,12 @@ h1.page-title {
     border: 2px solid #e8e2d6;
     padding: 7px 20px;
     text-transform: uppercase;
+  }
+  .container-search {
+    padding-top: 60px;
+    form {
+      padding-top: 10px;
+    }
   }
 }
 
