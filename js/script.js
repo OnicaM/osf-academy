@@ -66,12 +66,12 @@ function displayData(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-        <div class="item_caption">
-        <p>${item.name}</p>
-        <p class="price">$ ${item.price}</p>
-        </div>
-        </div>`;
+      <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+      <div class="item_caption">
+      <p>${item.name}</p>
+      <p class="price">$ ${item.price}</p>
+      </div>
+      </div>`;
 
     if (container) {
       container.appendChild(div);
@@ -100,12 +100,12 @@ function displayFeaturedProducts(data) {
     div.classList.add("item");
 
     div.innerHTML = `<div class="item_wrap">
-          <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-          <div class="item_caption">
-          <span class="item-title">${item.name}</span>
-          <span class="description">${item.description}</span>
-          </div>
-          </div>`;
+        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+        <div class="item_caption">
+        <span class="item-title">${item.name}</span>
+        <span class="description">${item.description}</span>
+        </div>
+        </div>`;
 
     if (featuredContainer) {
       featuredContainer.appendChild(div);
@@ -171,6 +171,7 @@ function showData(dataToDisplay) {
     });
   }
 }
+
 function displayServicesProduct(data) {
   var servicesContainer = document.querySelector(".filter-results .row");
 
@@ -180,12 +181,12 @@ function displayServicesProduct(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-          <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-          <div class="item_caption">
-          <span class="item-title">${item.name}</span>
-          <span class="price">$ ${item.price}</span>
-          </div>
-          </div>`;
+        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+        <div class="item_caption">
+        <span class="item-title">${item.name}</span>
+        <span class="price">$ ${item.price}</span>
+        </div>
+        </div>`;
 
     if (servicesContainer) {
       servicesContainer.appendChild(div);
@@ -217,6 +218,7 @@ function getCurrentYear() {
 function showHide() {
   var items = document.querySelectorAll(".products--popular .item");
 }
+
 function toggleMobileNav() {
   $(".nav-mobile").hide();
   $(".toggle-nav").on("click", function() {
@@ -224,11 +226,127 @@ function toggleMobileNav() {
     $(".nav-mobile").slideToggle();
   });
 }
+
+function close_accordion_section() {
+  $(".footer-info h4").removeClass("active");
+  $(".footer-info_description")
+    .slideUp(300)
+    .removeClass("open");
+}
+
+function accordion() {
+  $(".footer-info h4").removeClass("active");
+  $(".footer-info_description")
+    .hide(300)
+    .removeClass("open");
+  $(".footer-info h4").click(function(e) {
+    // Grab current anchor value
+    var currentAttrValue = $(this).attr("href");
+
+    if ($(e.target).is(".active")) {
+      close_accordion_section();
+    } else {
+      close_accordion_section();
+
+      // Add active class to section title
+      $(this).addClass("active");
+      // Open up the hidden content panel
+      $(this)
+        .next(".footer-info_description")
+        .slideDown(300)
+        .addClass("open");
+    }
+
+    e.preventDefault();
+  });
+}
+
+function openNavPages() {
+  $(".nav-mobile .has-children > i").on("click", function() {
+    $(this)
+      .parent()
+      .toggleClass("open");
+  });
+}
+
+function productCarousel() {
+  var scrollToElement = function(element) {
+      var $innerListItem = $(element),
+        $parentDiv = $(element).parent();
+
+      $parentDiv.scrollTop(
+        $parentDiv.scrollTop() +
+          $innerListItem.position().top -
+          $parentDiv.height() / 2 +
+          $innerListItem.height() / 2
+      );
+    },
+    setNavHeight = function() {
+      setTimeout(function() {
+        $(".carousel-nav-list").height(
+          $(".product-carousel")
+            .find("img")
+            .height() -
+            $(".carousel-btn").height() * 2 -
+            20
+        );
+      }, 250);
+    };
+
+  $(".product-carousel").slick({
+    arrows: false,
+    fade: true,
+    speed: 500,
+    autoplay: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false
+        }
+      }
+    ]
+  });
+
+  window.onresize = function() {
+    setNavHeight();
+  };
+
+  $(document).ready(function() {
+    setNavHeight();
+  });
+
+  $(".carousel").on("beforeChange", function(
+    event,
+    slick,
+    currentSlide,
+    nextSlide
+  ) {
+    $(".carousel-nav-item").removeClass("active");
+    $('.carousel-nav-item[data-slide="' + nextSlide + '"]').addClass("active");
+    scrollToElement($('.carousel-nav-item[data-slide="' + nextSlide + '"]')[0]);
+  });
+
+  $(document).on("click", ".carousel-nav-item", function(e) {
+    var $this = $(this),
+      slideNumber = parseInt($this.attr("data-slide"));
+
+    $(".product-carousel").slick("slickGoTo", slideNumber);
+  });
+}
+
 function init() {
   getCurrentYear();
   toggleMobileNav();
   //showHide();
   $("#tabs").tabs();
+  productCarousel();
+  openNavPages();
+  const mq = window.matchMedia("(max-width: 768px)");
+
+  if (mq.matches) {
+    accordion();
+  }
 }
 
 init();
