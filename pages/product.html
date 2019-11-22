@@ -188,7 +188,7 @@
          <div class="container">
             <div class="sale-product">
                <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-7">
                      <div class="sale-product_slider">
                         <div class="carousel-container">
                            <ul class="carousel product-carousel">
@@ -211,17 +211,49 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-5">
                      <div class="sale-product_description">
                         <h2 class="price">$299.99</h2>
-                        <select name="color" id="color">
-                           <option value="darkgrey">Dark Grey</option>
-                           <option value="red">red</option>
-                        </select>
+                        <form>
+                          <select name="color" id="color">
+                            <option value="darkgrey">Dark Grey</option>
+                            <option value="red">red</option>
+                          </select>
+                          <div class="add-product-wrapper">
+
+                          
+                          <div class="input-wrap">
+                              <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                              <input type="text" id="number" value="0" />
+                              <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                             
+                          </div>
+                          <button class="button" id="add" class="add-to-cart">Add to cart</button>
+                        </div>
+                        </form>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. 
                            Nemo enim ipsam voluptatem quia voluptas
-                           sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                           
                         </p>
+                        <p><a href="#">Read more</a></p>
+
+                        <div class="share">
+                          <span>Share</span>
+                            <ul class="list list--social">
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                      </div>
                   </div>
                   <div class="col-sm-12">
@@ -295,14 +327,9 @@
       </section>
       <section class="popular-items">
             <div class="container">
+              <h2>Popular Items</h2>
                <div class="row">
-                  <div class="col-3">
-                  </div>
-                  <div class="col-3">
-                  </div>
-                  <div class="col-3">
-                  </div>
-                  <div class="col-3">
+               
                   </div>
                </div>
             </div>
