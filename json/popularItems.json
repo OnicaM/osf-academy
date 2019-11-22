@@ -5,70 +5,80 @@
       "name": "Kristina Dam Oak Table With White Marble Top",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 2,
       "name": "product name2",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "add-button"
     },
     {
       "id": 3,
       "name": "product name3",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "overlay-buttons"
     },
     {
       "id": 4,
       "name": "product name4",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 5,
       "name": "product name5",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 6,
       "name": "product name6",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 7,
       "name": "product name7",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 8,
       "name": "product name8",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons overlay"
     },
     {
       "id": 9,
       "name": "product name9",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     },
     {
       "id": 10,
       "name": "Kristina Dam Oak Table With White Marble Top",
       "price": 200,
       "description": "product description here",
-      "image": "img1"
+      "image": "img1",
+      "class": "no-buttons"
     }
   ]
 }
