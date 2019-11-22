@@ -55,6 +55,8 @@ window.onload = function() {
   services.then(items => {
     displayServicesProduct(items.products);
   });
+  var popularItems = get("../json/featuredProducts.json");
+  popularItems.then(items => displayLastFourItems(items.products));
 };
 
 function displayData(data) {
@@ -65,11 +67,21 @@ function displayData(data) {
 
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
-    div.innerHTML = `<div class="item_wrap">
+    div.innerHTML = `<div class="item_wrap ${item.class}">
       <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
       <div class="item_caption">
       <p>${item.name}</p>
       <p class="price">$ ${item.price}</p>
+      </div>
+      <div class="buttons-action">
+        <div class="button-price"><span>$ ${item.price}</span> <button>Buy now</button></div>
+        <div class="buttons-overlay">
+          <button class="add-to-cart"><i class="fas fa-plus"></i></button><button class="add-to-favorites"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="overlay-background">
+          <span class="overlay-text">My dragons are misbehaving again. Unbelieveable!</span>
+          <span class="overlay-ic">5H AGO</span>
+        </div>
       </div>
       </div>`;
 
@@ -149,6 +161,28 @@ function displayFeaturedProducts(data) {
     ]
   });
 }
+function displayLastFourItems(data) {
+  var sliceData = data.slice(0, 4);
+  var popular = document.querySelector(".popular-items .row");
+
+  sliceData.forEach(item => {
+    var div = document.createElement("div");
+
+    div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
+
+    div.innerHTML = `<div class="item_wrap">
+        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
+        <div class="item_caption">
+        <span class="item-title">${item.name}</span>
+        <span class="description">${item.description}</span>
+        </div>
+        </div>`;
+
+    if (popular) {
+      popular.appendChild(div);
+    }
+  });
+}
 
 function showData(dataToDisplay) {
   var loadMore = document.querySelector(".more .button--more"),
@@ -159,8 +193,8 @@ function showData(dataToDisplay) {
   var fullProducts = showLess.concat(showMore);
 
   displayData(showLess);
-  console.log("show less: ", showLess);
-  console.log("show more ", showMore);
+  // console.log("show less: ", showLess);
+  // console.log("show more ", showMore);
   if (loadMore) {
     loadMore.addEventListener("click", function(e) {
       // e.preventDefault();
@@ -333,6 +367,22 @@ function productCarousel() {
 
     $(".product-carousel").slick("slickGoTo", slideNumber);
   });
+}
+
+//product page
+function increaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById("number").value = value;
+}
+
+function decreaseValue() {
+  var value = parseInt(document.getElementById("number").value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? (value = 1) : "";
+  value--;
+  document.getElementById("number").value = value;
 }
 
 function init() {
