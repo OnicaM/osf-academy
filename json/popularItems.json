@@ -13,7 +13,7 @@
       "name": "product name2",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item2",
       "class": "add-button"
     },
     {
@@ -21,7 +21,7 @@
       "name": "product name3",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item3",
       "class": "overlay-buttons"
     },
     {
@@ -29,7 +29,7 @@
       "name": "product name4",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item4",
       "class": "no-buttons"
     },
     {
@@ -37,7 +37,7 @@
       "name": "product name5",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item5",
       "class": "no-buttons"
     },
     {

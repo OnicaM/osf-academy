@@ -260,6 +260,22 @@ header {
   .user-utilities > span {
     display: inline-block;
     margin-left: 32px;
+    position: relative;
+    cursor: pointer;
+
+    span.favorites-icon_count,
+    span.chart-icon_count {
+      position: absolute;
+      top: -9px;
+      right: -11px;
+      font-size: 12px;
+      color: #84bc22;
+      border: 2px solid #84bc22;
+      border-radius: 100%;
+      padding: 1px 3px;
+      line-height: 1;
+      background-color: white;
+    }
   }
 
   @media screen and (max-width: 992px) {
@@ -428,14 +444,14 @@ ul.slick-dots {
     }
   }
   .banner-slider_item[data-slick-index*="1"] {
-    background-image: url("../images/slider1.jpg");
+    background-image: url("../images/carousel2.png");
     text-align: center;
     .banner-slider_description {
       margin: 0 auto;
     }
   }
   .banner-slider_item[data-slick-index*="2"] {
-    background-image: url("../images/slider1.jpg");
+    background-image: url("../images/carousel3.png");
     text-align: right;
     .banner-slider_description {
       max-width: 365px;
@@ -1159,10 +1175,15 @@ ul.carousel-nav-list > li ~ li {
     width: 100%;
   }
   .carousel-nav--vertical {
-    display: none;
+    // display: none;
+    width: 100%;
   }
   ul.carousel.product-carousel {
     padding-right: 0px;
+  }
+  .carousel-nav-list .carousel-nav-item {
+    display: inline-block;
+    max-width: 19%;
   }
 }
 

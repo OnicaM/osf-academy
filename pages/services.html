@@ -13,6 +13,7 @@
     <title>OSF Academy</title>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../slick/slick.js"></script>
     <link rel="stylesheet" href="../slick/slick.css" />
 </head>
@@ -117,17 +118,56 @@
                 </div>
                 <div class="user-utilities">
                     <span class="search-icon">
-                <img src="../svg/loupe.svg" alt="Search" />
-              </span>
+                  <img src="../svg/loupe.svg" alt="Search" />
+                  </span>
                     <span class="user-icon">
-                <img src="../svg/avatar.svg" alt="user" />
-              </span>
-                    <span class="favorites-icon">
-                <img src="../svg/like.svg" alt="like" />
-              </span>
-                    <span class="chart-icon">
-                <img src="../svg/shopping-bag.svg" alt="shopping" />
-              </span>
+                  <img src="../svg/avatar.svg" alt="user" />
+                  </span>
+                    <span class="favorites-icon" data-toggle="modal" data-target=".bd-example-modal-xl-favorites">
+                    <span class="favorites-icon_count">0</span>
+                    <img src="../svg/like.svg" alt="like" />
+
+                    </span>
+                    <span class="chart-icon" data-toggle="modal" data-target=".bd-example-modal-xl-cart">
+                    <span class="chart-icon_count">0</span>
+                    <img src="../svg/shopping-bag.svg" alt="shopping" />
+                    </span>
+
+                    <div class=" modal fade bd-example-modal-xl-favorites">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Favorites</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="favourites-products-container">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" modal fade bd-example-modal-xl-cart">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Cart</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-products-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="container_content container_content-mobile">

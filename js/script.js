@@ -55,9 +55,77 @@ window.onload = function() {
   services.then(items => {
     displayServicesProduct(items.products);
   });
+
   var popularItems = get("../json/featuredProducts.json");
   popularItems.then(items => displayLastFourItems(items.products));
 };
+
+var cart = [];
+var favorites = [];
+var myCart = localStorage.getItem("myCart");
+var displayMyCart = JSON.parse(myCart);
+
+var myFavorites = localStorage.getItem("myCart");
+var displayMyFavorites = JSON.parse(myFavorites);
+
+if (displayMyCart && displayMyCart.length >= 0) {
+  displayMyCart.forEach(item => {
+    $(".chart-icon_count").text(item.quantity);
+    console.log(item);
+  });
+} else {
+  $(".chart-icon_count").text("0");
+}
+
+if (displayMyFavorites && displayMyFavorites.length >= 0) {
+  displayMyFavorites.forEach(item => {
+    $(".favorites-icon_count").text(item.quantity);
+    console.log(item);
+  });
+} else {
+  $(".chart-icon_count").text("0");
+}
+
+function displayProductsInCart() {
+  var container = document.querySelector(".cart-products-container");
+  var div = document.createElement("div");
+  if (displayMyCart) {
+    displayMyCart.forEach(item => {
+      console.log("display: ", item);
+
+      div.classList.add("item");
+      div.innerHTML = `<div class="item_wrap">
+      <div class="item_name">
+       ${item.quantity}x   ${item.name}
+      <p class="price">$ ${item.price}</p>
+      </div>
+      </div>`;
+    });
+    if (container) {
+      container.appendChild(div);
+    }
+  }
+}
+function displayProductsInFavorites() {
+  var containerF = document.querySelector(".favourites-products-container");
+  var div = document.createElement("div");
+  if (displayMyFavorites) {
+    displayMyFavorites.forEach(item => {
+      console.log("displayF: ", item);
+
+      div.classList.add("item");
+      div.innerHTML = `<div class="item_wrap">
+      <div class="item_name">
+       ${item.quantity}x   ${item.name}
+      <p class="price">$ ${item.price}</p>
+      </div>
+      </div>`;
+    });
+    if (containerF) {
+      containerF.appendChild(div);
+    }
+  }
+}
 
 function displayData(data) {
   var container = document.querySelector(".products--popular .row");
@@ -74,9 +142,9 @@ function displayData(data) {
       <p class="price">$ ${item.price}</p>
       </div>
       <div class="buttons-action">
-        <div class="button-price"><span>$ ${item.price}</span> <button>Buy now</button></div>
+        <div class="button-price"><span>$ ${item.price}</span> <button class="add-to-cart" data-id="${item.id}">Buy now</button></div>
         <div class="buttons-overlay">
-          <button class="add-to-cart"><i class="fas fa-plus"></i></button><button class="add-to-favorites"><i class="fas fa-heart"></i></button>
+          <button class="add-to-cart fas fa-plus" data-id="${item.id}"></button><button class="add-to-favorites fas fa-heart"  data-id="${item.id}"></button>
         </div>
         <div class="overlay-background">
           <span class="overlay-text">My dragons are misbehaving again. Unbelieveable!</span>
@@ -88,7 +156,99 @@ function displayData(data) {
     if (container) {
       container.appendChild(div);
     }
+
+    var selectItem = $(".products--popular .row");
+    var button = selectItem.find("button");
+    button.each(function(index) {
+      //var button = $(this).find("button");
+      $(this).on("click", function(e) {
+        var buttonTarget = $(e.target);
+        if (buttonTarget.hasClass("add-to-cart")) {
+          var buttonId = buttonTarget.data("id");
+          addToCart(buttonId, data);
+
+          if (cart.length >= 0) {
+            cart.forEach(function(item, index) {
+              $(".chart-icon_count").text(item.quantity);
+            });
+          } else {
+            $(".chart-icon_count").text("0");
+          }
+        } else if (buttonTarget.hasClass("add-to-favorites")) {
+          var buttonId = buttonTarget.data("id");
+          addToFavorites(buttonId, data);
+
+          if (favorites.length >= 0) {
+            favorites.forEach(function(item, index) {
+              console.log("quantity:", item.quantity);
+              $(".favorites-icon_count").text(item.quantity);
+            });
+          } else {
+            $(".favorites-icon_count").text("0");
+          }
+        }
+      });
+    });
   });
+
+  //Add to cart function
+  function addToCart(elemId, data) {
+    var obj = data.find(function(obj) {
+      return obj.id == elemId;
+    });
+
+    if (cart.length === 0 || productFound(obj.id) === undefined) {
+      cart.push({
+        id: obj.id,
+        name: obj.name,
+        quantity: 1,
+        price: obj.price
+      });
+      localStorage.setItem("myCart", JSON.stringify(cart));
+      console.log(cart);
+    } else {
+      cart.forEach(function(item) {
+        if (item.id === obj.id) {
+          item.quantity++;
+          //var myCart = JSON.parse(getItem("myCart"));
+        }
+      });
+    }
+  }
+  function addToFavorites(elemId, data) {
+    var obj = data.find(function(obj) {
+      return obj.id == elemId;
+    });
+
+    if (favorites.length === 0 || favProductFound(obj.id) === undefined) {
+      favorites.push({
+        id: obj.id,
+        name: obj.name,
+        quantity: 1,
+        price: obj.price
+      });
+      localStorage.setItem("myFavorites", JSON.stringify(favorites));
+      // console.log(favorites);
+    } else {
+      favorites.forEach(function(item) {
+        if (item.id === obj.id) {
+          item.quantity++;
+        }
+      });
+    }
+  }
+
+  var productFound = function(productId) {
+    return cart.find(function(item) {
+      return item.id === productId;
+    });
+  };
+  var favProductFound = function(productId) {
+    return favorites.find(function(item) {
+      return item.id === productId;
+    });
+  };
+  //end add to cart
 
   $(".products--popular .row").slick({
     slidesToShow: 1,
@@ -389,7 +549,10 @@ function init() {
   getCurrentYear();
   toggleMobileNav();
   //showHide();
-  $("#tabs").tabs();
+  if ($("#tabs")) {
+    $("#tabs").tabs();
+  }
+
   productCarousel();
   openNavPages();
   const mq = window.matchMedia("(max-width: 768px)");
@@ -397,6 +560,8 @@ function init() {
   if (mq.matches) {
     accordion();
   }
+  displayProductsInCart();
+  displayProductsInFavorites();
 }
 
 init();

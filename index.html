@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet" />
-
     <link rel="stylesheet" href="styles/style.css" />
     <title>OSF Academy</title>
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -34,7 +33,7 @@
                     <ul class="level1">
                         <li class="has-children">
                             <a href="pages/services.html">Services <i class="fas fa-sort-down"></i>
-                </a>
+                        </a>
                             <ul class="level2">
                                 <li class="has-children">
                                     <span>Product categories</span>
@@ -110,26 +109,65 @@
                 <div class="header-dropdowns">
                     <div class="language-switch">
                         <span class="language-switch_text fas fa-sort-down">
-                <span> EN</span></span>
+                     <span> EN</span></span>
                     </div>
                     <div class="coin-switch">
                         <span class="coin-switch_text fas fa-sort-down">
-                <span>$US</span></span>
+                     <span>$US</span></span>
                     </div>
                 </div>
                 <div class="user-utilities">
                     <span class="search-icon">
-              <img src="svg/loupe.svg" alt="Search" />
-            </span>
+                  <img src="svg/loupe.svg" alt="Search" />
+                  </span>
                     <span class="user-icon">
-              <img src="svg/avatar.svg" alt="user" />
-            </span>
-                    <span class="favorites-icon">
-              <img src="svg/like.svg" alt="like" />
-            </span>
-                    <span class="chart-icon">
-              <img src="svg/shopping-bag.svg" alt="shopping" />
-            </span>
+                  <img src="svg/avatar.svg" alt="user" />
+                  </span>
+                    <span class="favorites-icon" data-toggle="modal" data-target=".bd-example-modal-xl-favorites">
+                    <span class="favorites-icon_count">0</span>
+                    <img src="svg/like.svg" alt="like" />
+
+                    </span>
+                    <span class="chart-icon" data-toggle="modal" data-target=".bd-example-modal-xl-cart">
+                    <span class="chart-icon_count">0</span>
+                    <img src="svg/shopping-bag.svg" alt="shopping" />
+                    </span>
+
+                    <div class=" modal fade bd-example-modal-xl-favorites">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Favorites</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="favourites-products-container">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" modal fade bd-example-modal-xl-cart">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Cart</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-products-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="container_content container_content-mobile">
@@ -182,8 +220,8 @@
                             <div class="banner-slider_item">
                                 <div class="banner-slider_item-wrap">
                                     <h1 class="banner-slider_title">
-                      Control and manage any device with cloud solutions
-                    </h1>
+                                 Control and manage any device with cloud solutions
+                              </h1>
                                     <div class="banner-slider_description">
                                         <p>
                                             Improve business performance and the user experience with the right mix of IoT technology and processes
@@ -197,8 +235,8 @@
                             <div class="banner-slider_item">
                                 <div class="banner-slider_item-wrap">
                                     <h1 class="banner-slider_title">
-                      Control and manage any device with cloud solutions
-                    </h1>
+                                 Control and manage any device with cloud solutions
+                              </h1>
                                     <div class="banner-slider_description">
                                         <p>
                                             Improve business performance and the user experience with the right mix of IoT technology and processes
@@ -212,8 +250,8 @@
                             <div class="banner-slider_item">
                                 <div class="banner-slider_item-wrap">
                                     <h1 class="banner-slider_title">
-                      Control and manage any device with cloud solutions
-                    </h1>
+                                 Control and manage any device with cloud solutions
+                              </h1>
                                     <div class="banner-slider_description">
                                         <p>
                                             Improve business performance and the user experience with the right mix of IoT technology and processes
@@ -240,8 +278,8 @@
                             <h4>Follow us on Facebook</h4>
                             <p>
                                 <small>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                  </small>
+                           Sed ut perspiciatis unde omnis iste natus error sit
+                           </small>
                             </p>
                             <a href="#" class="button">Follow</a>
                         </div>
@@ -256,8 +294,8 @@
                 <div class="more">
                     <button href="#" class="button button--more">Learn More</button>
                     <!-- <button href="#" class="button button--less hidden">
-              Learn More
-            </button> -->
+                     Learn More
+                     </button> -->
                 </div>
             </div>
         </section>
@@ -266,27 +304,26 @@
                 <h2 class="section_title">Banner OSF Theme</h2>
                 <p>
                     <small>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed
-            </small>
+                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                  quae ab illo inventore veritatis et quasi architecto beatae vitae
+                  dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                  aspernatur aut odit aut fugit, sed
+                  </small>
                 </p>
             </div>
         </section>
         <section class="products products--featured background--dark">
             <div class="container dark text-center">
                 <h2 class="section_title">
-            Featured Products
-            <span> Unde omnis iste natus error sit voluptatem</span>
-          </h2>
+                  Featured Products
+                  <span> Unde omnis iste natus error sit voluptatem</span>
+               </h2>
                 <div class="slider-nav">
                     <div class="divider"><span>///</span></div>
                 </div>
                 <div class="row"></div>
             </div>
         </section>
-
         <section class="skills-section">
             <div class="container dark">
                 <div class="row">
@@ -321,7 +358,6 @@
             </div>
         </section>
     </div>
-
     <footer>
         <div class="container">
             <div class="row">
@@ -337,7 +373,6 @@
                             <br /> 5600, Blvd. des Galeries, Bur 530
                             <br /> Québec, Québec G2K 2H6
                             <br /> contact@osf-global.com
-
                             <br /> +1 (888) 548-4344
                         </div>
                     </div>
@@ -408,159 +443,159 @@
         <div class="user-utilities">
             <div class="container">
                 <span class="search-icon">
-            <svg
-              width="25"
-              version="1.1"
-              id="Capa_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 512 512"
-              style="enable-background:new 0 0 512 512;"
-              xml:space="preserve"
-            >
-              <g>
-                <g>
-                  <path
-                    d="M310,190c-5.52,0-10,4.48-10,10s4.48,10,10,10c5.52,0,10-4.48,10-10S315.52,190,310,190z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <path
-                    d="M500.281,443.719l-133.48-133.48C388.546,277.485,400,239.555,400,200C400,89.72,310.28,0,200,0S0,89.72,0,200
-                 s89.72,200,200,200c39.556,0,77.486-11.455,110.239-33.198l36.895,36.895c0.005,0.005,0.01,0.01,0.016,0.016l96.568,96.568
-                 C451.276,507.838,461.319,512,472,512c10.681,0,20.724-4.162,28.278-11.716C507.837,492.731,512,482.687,512,472
-                 S507.837,451.269,500.281,443.719z M305.536,345.727c0,0.001-0.001,0.001-0.002,0.002C274.667,368.149,238.175,380,200,380
-                 c-99.252,0-180-80.748-180-180S100.748,20,200,20s180,80.748,180,180c0,38.175-11.851,74.667-34.272,105.535
-                 C334.511,320.988,320.989,334.511,305.536,345.727z M326.516,354.793c10.35-8.467,19.811-17.928,28.277-28.277l28.371,28.371
-                 c-8.628,10.183-18.094,19.65-28.277,28.277L326.516,354.793z M486.139,486.139c-3.78,3.78-8.801,5.861-14.139,5.861
-                 s-10.359-2.081-14.139-5.861l-88.795-88.795c10.127-8.691,19.587-18.15,28.277-28.277l88.798,88.798
-                 C489.919,461.639,492,466.658,492,472C492,477.342,489.919,482.361,486.139,486.139z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <path
-                    d="M200,40c-88.225,0-160,71.775-160,160s71.775,160,160,160s160-71.775,160-160S288.225,40,200,40z M200,340
-                 c-77.196,0-140-62.804-140-140S122.804,60,200,60s140,62.804,140,140S277.196,340,200,340z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <path
-                    d="M312.065,157.073c-8.611-22.412-23.604-41.574-43.36-55.413C248.479,87.49,224.721,80,200,80c-5.522,0-10,4.478-10,10
-                 c0,5.522,4.478,10,10,10c41.099,0,78.631,25.818,93.396,64.247c1.528,3.976,5.317,6.416,9.337,6.416
-                 c1.192,0,2.405-0.215,3.584-0.668C311.472,168.014,314.046,162.229,312.065,157.073z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-            </svg>
-          </span>
+                  <svg
+                     width="25"
+                     version="1.1"
+                     id="Capa_1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 512 512"
+                     style="enable-background:new 0 0 512 512;"
+                     xml:space="preserve"
+                     >
+                     <g>
+                        <g>
+                           <path
+                              d="M310,190c-5.52,0-10,4.48-10,10s4.48,10,10,10c5.52,0,10-4.48,10-10S315.52,190,310,190z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                     <g>
+                        <g>
+                           <path
+                              d="M500.281,443.719l-133.48-133.48C388.546,277.485,400,239.555,400,200C400,89.72,310.28,0,200,0S0,89.72,0,200
+                              s89.72,200,200,200c39.556,0,77.486-11.455,110.239-33.198l36.895,36.895c0.005,0.005,0.01,0.01,0.016,0.016l96.568,96.568
+                              C451.276,507.838,461.319,512,472,512c10.681,0,20.724-4.162,28.278-11.716C507.837,492.731,512,482.687,512,472
+                              S507.837,451.269,500.281,443.719z M305.536,345.727c0,0.001-0.001,0.001-0.002,0.002C274.667,368.149,238.175,380,200,380
+                              c-99.252,0-180-80.748-180-180S100.748,20,200,20s180,80.748,180,180c0,38.175-11.851,74.667-34.272,105.535
+                              C334.511,320.988,320.989,334.511,305.536,345.727z M326.516,354.793c10.35-8.467,19.811-17.928,28.277-28.277l28.371,28.371
+                              c-8.628,10.183-18.094,19.65-28.277,28.277L326.516,354.793z M486.139,486.139c-3.78,3.78-8.801,5.861-14.139,5.861
+                              s-10.359-2.081-14.139-5.861l-88.795-88.795c10.127-8.691,19.587-18.15,28.277-28.277l88.798,88.798
+                              C489.919,461.639,492,466.658,492,472C492,477.342,489.919,482.361,486.139,486.139z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                     <g>
+                        <g>
+                           <path
+                              d="M200,40c-88.225,0-160,71.775-160,160s71.775,160,160,160s160-71.775,160-160S288.225,40,200,40z M200,340
+                              c-77.196,0-140-62.804-140-140S122.804,60,200,60s140,62.804,140,140S277.196,340,200,340z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                     <g>
+                        <g>
+                           <path
+                              d="M312.065,157.073c-8.611-22.412-23.604-41.574-43.36-55.413C248.479,87.49,224.721,80,200,80c-5.522,0-10,4.478-10,10
+                              c0,5.522,4.478,10,10,10c41.099,0,78.631,25.818,93.396,64.247c1.528,3.976,5.317,6.416,9.337,6.416
+                              c1.192,0,2.405-0.215,3.584-0.668C311.472,168.014,314.046,162.229,312.065,157.073z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                  </svg>
+               </span>
                 <span class="user-icon">
-            <svg
-              width="25"
-              version="1.1"
-              id="Capa_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 482.9 482.9"
-              style="enable-background:new 0 0 482.9 482.9;"
-              xml:space="preserve"
-            >
-              <g>
-                <g>
-                  <path
-                    d="M239.7,260.2c0.5,0,1,0,1.6,0c0.2,0,0.4,0,0.6,0c0.3,0,0.7,0,1,0c29.3-0.5,53-10.8,70.5-30.5
-                       c38.5-43.4,32.1-117.8,31.4-124.9c-2.5-53.3-27.7-78.8-48.5-90.7C280.8,5.2,262.7,0.4,242.5,0h-0.7c-0.1,0-0.3,0-0.4,0h-0.6
-                       c-11.1,0-32.9,1.8-53.8,13.7c-21,11.9-46.6,37.4-49.1,91.1c-0.7,7.1-7.1,81.5,31.4,124.9C186.7,249.4,210.4,259.7,239.7,260.2z
-                       M164.6,107.3c0-0.3,0.1-0.6,0.1-0.8c3.3-71.7,54.2-79.4,76-79.4h0.4c0.2,0,0.5,0,0.8,0c27,0.6,72.9,11.6,76,79.4
-                       c0,0.3,0,0.6,0.1,0.8c0.1,0.7,7.1,68.7-24.7,104.5c-12.6,14.2-29.4,21.2-51.5,21.4c-0.2,0-0.3,0-0.5,0l0,0c-0.2,0-0.3,0-0.5,0
-                       c-22-0.2-38.9-7.2-51.4-21.4C157.7,176.2,164.5,107.9,164.6,107.3z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                  <path
-                    d="M446.8,383.6c0-0.1,0-0.2,0-0.3c0-0.8-0.1-1.6-0.1-2.5c-0.6-19.8-1.9-66.1-45.3-80.9c-0.3-0.1-0.7-0.2-1-0.3
-                       c-45.1-11.5-82.6-37.5-83-37.8c-6.1-4.3-14.5-2.8-18.8,3.3c-4.3,6.1-2.8,14.5,3.3,18.8c1.7,1.2,41.5,28.9,91.3,41.7
-                       c23.3,8.3,25.9,33.2,26.6,56c0,0.9,0,1.7,0.1,2.5c0.1,9-0.5,22.9-2.1,30.9c-16.2,9.2-79.7,41-176.3,41
-                       c-96.2,0-160.1-31.9-176.4-41.1c-1.6-8-2.3-21.9-2.1-30.9c0-0.8,0.1-1.6,0.1-2.5c0.7-22.8,3.3-47.7,26.6-56
-                       c49.8-12.8,89.6-40.6,91.3-41.7c6.1-4.3,7.6-12.7,3.3-18.8c-4.3-6.1-12.7-7.6-18.8-3.3c-0.4,0.3-37.7,26.3-83,37.8
-                       c-0.4,0.1-0.7,0.2-1,0.3c-43.4,14.9-44.7,61.2-45.3,80.9c0,0.9,0,1.7-0.1,2.5c0,0.1,0,0.2,0,0.3c-0.1,5.2-0.2,31.9,5.1,45.3
-                       c1,2.6,2.8,4.8,5.2,6.3c3,2,74.9,47.8,195.2,47.8s192.2-45.9,195.2-47.8c2.3-1.5,4.2-3.7,5.2-6.3
-                       C447,415.5,446.9,388.8,446.8,383.6z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-            </svg>
-          </span>
+                  <svg
+                     width="25"
+                     version="1.1"
+                     id="Capa_1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 482.9 482.9"
+                     style="enable-background:new 0 0 482.9 482.9;"
+                     xml:space="preserve"
+                     >
+                     <g>
+                        <g>
+                           <path
+                              d="M239.7,260.2c0.5,0,1,0,1.6,0c0.2,0,0.4,0,0.6,0c0.3,0,0.7,0,1,0c29.3-0.5,53-10.8,70.5-30.5
+                              c38.5-43.4,32.1-117.8,31.4-124.9c-2.5-53.3-27.7-78.8-48.5-90.7C280.8,5.2,262.7,0.4,242.5,0h-0.7c-0.1,0-0.3,0-0.4,0h-0.6
+                              c-11.1,0-32.9,1.8-53.8,13.7c-21,11.9-46.6,37.4-49.1,91.1c-0.7,7.1-7.1,81.5,31.4,124.9C186.7,249.4,210.4,259.7,239.7,260.2z
+                              M164.6,107.3c0-0.3,0.1-0.6,0.1-0.8c3.3-71.7,54.2-79.4,76-79.4h0.4c0.2,0,0.5,0,0.8,0c27,0.6,72.9,11.6,76,79.4
+                              c0,0.3,0,0.6,0.1,0.8c0.1,0.7,7.1,68.7-24.7,104.5c-12.6,14.2-29.4,21.2-51.5,21.4c-0.2,0-0.3,0-0.5,0l0,0c-0.2,0-0.3,0-0.5,0
+                              c-22-0.2-38.9-7.2-51.4-21.4C157.7,176.2,164.5,107.9,164.6,107.3z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                           <path
+                              d="M446.8,383.6c0-0.1,0-0.2,0-0.3c0-0.8-0.1-1.6-0.1-2.5c-0.6-19.8-1.9-66.1-45.3-80.9c-0.3-0.1-0.7-0.2-1-0.3
+                              c-45.1-11.5-82.6-37.5-83-37.8c-6.1-4.3-14.5-2.8-18.8,3.3c-4.3,6.1-2.8,14.5,3.3,18.8c1.7,1.2,41.5,28.9,91.3,41.7
+                              c23.3,8.3,25.9,33.2,26.6,56c0,0.9,0,1.7,0.1,2.5c0.1,9-0.5,22.9-2.1,30.9c-16.2,9.2-79.7,41-176.3,41
+                              c-96.2,0-160.1-31.9-176.4-41.1c-1.6-8-2.3-21.9-2.1-30.9c0-0.8,0.1-1.6,0.1-2.5c0.7-22.8,3.3-47.7,26.6-56
+                              c49.8-12.8,89.6-40.6,91.3-41.7c6.1-4.3,7.6-12.7,3.3-18.8c-4.3-6.1-12.7-7.6-18.8-3.3c-0.4,0.3-37.7,26.3-83,37.8
+                              c-0.4,0.1-0.7,0.2-1,0.3c-43.4,14.9-44.7,61.2-45.3,80.9c0,0.9,0,1.7-0.1,2.5c0,0.1,0,0.2,0,0.3c-0.1,5.2-0.2,31.9,5.1,45.3
+                              c1,2.6,2.8,4.8,5.2,6.3c3,2,74.9,47.8,195.2,47.8s192.2-45.9,195.2-47.8c2.3-1.5,4.2-3.7,5.2-6.3
+                              C447,415.5,446.9,388.8,446.8,383.6z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                  </svg>
+               </span>
                 <span class="favorites-icon">
-            <svg
-              width="25"
-              version="1.1"
-              id="Capa_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 51.997 51.997"
-              style="enable-background:new 0 0 51.997 51.997;"
-              xml:space="preserve"
-            >
-              <g>
-                <path
-                  d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
-               c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
-               c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
-               C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
-               c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
-               c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
-               c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"
-                  fill="rgba(255,255,255,0.5)"
-                />
-              </g>
-            </svg>
-          </span>
+                  <svg
+                     width="25"
+                     version="1.1"
+                     id="Capa_1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 51.997 51.997"
+                     style="enable-background:new 0 0 51.997 51.997;"
+                     xml:space="preserve"
+                     >
+                     <g>
+                        <path
+                           d="M51.911,16.242C51.152,7.888,45.239,1.827,37.839,1.827c-4.93,0-9.444,2.653-11.984,6.905
+                           c-2.517-4.307-6.846-6.906-11.697-6.906c-7.399,0-13.313,6.061-14.071,14.415c-0.06,0.369-0.306,2.311,0.442,5.478
+                           c1.078,4.568,3.568,8.723,7.199,12.013l18.115,16.439l18.426-16.438c3.631-3.291,6.121-7.445,7.199-12.014
+                           C52.216,18.553,51.97,16.611,51.911,16.242z M49.521,21.261c-0.984,4.172-3.265,7.973-6.59,10.985L25.855,47.481L9.072,32.25
+                           c-3.331-3.018-5.611-6.818-6.596-10.99c-0.708-2.997-0.417-4.69-0.416-4.701l0.015-0.101C2.725,9.139,7.806,3.826,14.158,3.826
+                           c4.687,0,8.813,2.88,10.771,7.515l0.921,2.183l0.921-2.183c1.927-4.564,6.271-7.514,11.069-7.514
+                           c6.351,0,11.433,5.313,12.096,12.727C49.938,16.57,50.229,18.264,49.521,21.261z"
+                           fill="rgba(255,255,255,0.5)"
+                           />
+                     </g>
+                  </svg>
+               </span>
                 <span class="chart-icon">
-            <svg
-              width="25"
-              version="1.1"
-              id="Capa_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 321.2 321.2"
-              style="enable-background:new 0 0 321.2 321.2;"
-              xml:space="preserve"
-            >
-              <g>
-                <g>
-                  <path
-                    d="M306.4,313.2l-24-223.6c-0.4-3.6-3.6-6.4-7.2-6.4h-44.4V69.6c0-38.4-31.2-69.6-69.6-69.6c-38.4,0-69.6,31.2-69.6,69.6
-                 v13.6H46c-3.6,0-6.8,2.8-7.2,6.4l-24,223.6c-0.4,2,0.4,4,1.6,5.6c1.2,1.6,3.2,2.4,5.2,2.4h278c2,0,4-0.8,5.2-2.4
-                 C306,317.2,306.8,315.2,306.4,313.2z M223.6,123.6c3.6,0,6.4,2.8,6.4,6.4c0,3.6-2.8,6.4-6.4,6.4c-3.6,0-6.4-2.8-6.4-6.4
-                 C217.2,126.4,220,123.6,223.6,123.6z M106,69.6c0-30.4,24.8-55.2,55.2-55.2c30.4,0,55.2,24.8,55.2,55.2v13.6H106V69.6z
-                  M98.8,123.6c3.6,0,6.4,2.8,6.4,6.4c0,3.6-2.8,6.4-6.4,6.4c-3.6,0-6.4-2.8-6.4-6.4C92.4,126.4,95.2,123.6,98.8,123.6z M30,306.4
-                 L52.4,97.2h39.2v13.2c-8,2.8-13.6,10.4-13.6,19.2c0,11.2,9.2,20.4,20.4,20.4c11.2,0,20.4-9.2,20.4-20.4c0-8.8-5.6-16.4-13.6-19.2
-                 V97.2h110.4v13.2c-8,2.8-13.6,10.4-13.6,19.2c0,11.2,9.2,20.4,20.4,20.4c11.2,0,20.4-9.2,20.4-20.4c0-8.8-5.6-16.4-13.6-19.2V97.2
-                 H270l22.4,209.2H30z"
-                    fill="rgba(255,255,255,0.5)"
-                  />
-                </g>
-              </g>
-            </svg>
-          </span>
+                  <svg
+                     width="25"
+                     version="1.1"
+                     id="Capa_1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 321.2 321.2"
+                     style="enable-background:new 0 0 321.2 321.2;"
+                     xml:space="preserve"
+                     >
+                     <g>
+                        <g>
+                           <path
+                              d="M306.4,313.2l-24-223.6c-0.4-3.6-3.6-6.4-7.2-6.4h-44.4V69.6c0-38.4-31.2-69.6-69.6-69.6c-38.4,0-69.6,31.2-69.6,69.6
+                              v13.6H46c-3.6,0-6.8,2.8-7.2,6.4l-24,223.6c-0.4,2,0.4,4,1.6,5.6c1.2,1.6,3.2,2.4,5.2,2.4h278c2,0,4-0.8,5.2-2.4
+                              C306,317.2,306.8,315.2,306.4,313.2z M223.6,123.6c3.6,0,6.4,2.8,6.4,6.4c0,3.6-2.8,6.4-6.4,6.4c-3.6,0-6.4-2.8-6.4-6.4
+                              C217.2,126.4,220,123.6,223.6,123.6z M106,69.6c0-30.4,24.8-55.2,55.2-55.2c30.4,0,55.2,24.8,55.2,55.2v13.6H106V69.6z
+                              M98.8,123.6c3.6,0,6.4,2.8,6.4,6.4c0,3.6-2.8,6.4-6.4,6.4c-3.6,0-6.4-2.8-6.4-6.4C92.4,126.4,95.2,123.6,98.8,123.6z M30,306.4
+                              L52.4,97.2h39.2v13.2c-8,2.8-13.6,10.4-13.6,19.2c0,11.2,9.2,20.4,20.4,20.4c11.2,0,20.4-9.2,20.4-20.4c0-8.8-5.6-16.4-13.6-19.2
+                              V97.2h110.4v13.2c-8,2.8-13.6,10.4-13.6,19.2c0,11.2,9.2,20.4,20.4,20.4c11.2,0,20.4-9.2,20.4-20.4c0-8.8-5.6-16.4-13.6-19.2V97.2
+                              H270l22.4,209.2H30z"
+                              fill="rgba(255,255,255,0.5)"
+                              />
+                        </g>
+                     </g>
+                  </svg>
+               </span>
             </div>
         </div>
     </footer>
