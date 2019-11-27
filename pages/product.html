@@ -15,6 +15,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="../slick/slick.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" ></script>
     <link rel="stylesheet" href="../slick/slick.css" />
 </head>
 
@@ -33,7 +34,7 @@
                     <ul class="level1">
                         <li class="has-children">
                             <a href="services.html">Services <i class="fas fa-sort-down"></i>
-                         </a>
+                  </a>
                             <ul class="level2">
                                 <li class="has-children">
                                     <span>Product categories</span>
@@ -109,20 +110,20 @@
                 <div class="header-dropdowns">
                     <div class="language-switch">
                         <span class="language-switch_text fas fa-sort-down">
-                         <span> EN</span></span>
+                  <span> EN</span></span>
                     </div>
                     <div class="coin-switch">
                         <span class="coin-switch_text fas fa-sort-down">
-                         <span>$US</span></span>
+                  <span>$US</span></span>
                     </div>
                 </div>
                 <div class="user-utilities">
                     <span class="search-icon">
                   <img src="../svg/loupe.svg" alt="Search" />
                   </span>
-                    <span class="user-icon">
-                  <img src="../svg/avatar.svg" alt="user" />
-                  </span>
+                  <span class="user-icon" data-toggle="modal" data-target=".bd-example-modal-xl-login">
+                      <img src="../svg/avatar.svg" alt="user" />
+                    </span>
                     <span class="favorites-icon" data-toggle="modal" data-target=".bd-example-modal-xl-favorites">
                     <span class="favorites-icon_count">0</span>
                     <img src="../svg/like.svg" alt="like" />
@@ -152,19 +153,32 @@
                         </div>
                     </div>
 
-                    <div class=" modal fade bd-example-modal-xl-cart">
+                    <div class="modal fade bd-example-modal-xl-login">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
+                                <div class="modal-content_container"> 
 
+                                
                                 <div class="modal-header">
-                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Cart</h5>
+                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">Sing in</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="cart-products-container"></div>
+                                <div class="modal-body-form">
+                                    <form>
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                                        <div class="modal-action">
+                                                <input type="submit" value="Login" class="button">
+                                        </div>
+                                        
+                                    </form>
+                                    <a href="/pages/pageNotFound.html">I don’t have an account</a>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -173,6 +187,7 @@
             <div class="container_content container_content-mobile">
                 <div class="toggle-nav">
                     <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
                 </div>
                 <div class="logo">
                     <a href="../index.html">
@@ -187,24 +202,130 @@
                                 <li class="has-children">
                                     <a href="pageNotFound.html">Product Cateogories</a>
                                     <i class="fas fa-sort-down"></i>
+                                    <ul class="level3">
+                                        <li>
+                                            <a href="pageNotFound.html"> Accessories</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                        <li><a href="pageNotFound.html"> Art</a></li>
+                                        <li><a href="pageNotFound.html"> Books</a></li>
+                                        <li><a href="pageNotFound.html"> Drink</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Electronics</a>
+                                        </li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Food</a></li>
+                                        <li><a href="pageNotFound.html"> Gadgets</a></li>
+                                        <li><a href="pageNotFound.html"> Garden</a></li>
+                                        <li><a href="pageNotFound.html"> Grocery</a></li>
+                                        <li><a href="pageNotFound.html"> Home</a></li>
+                                        <li><a href="pageNotFound.html"> Jewelry</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Kids &amp; Baby</a>
+                                        </li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Men's Fashion</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Mobile</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Motorcycles</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Movies</a></li>
+                                        <li><a href="pageNotFound.html"> Music</a></li>
+                                        <li><a href="pageNotFound.html"> Office</a></li>
+                                        <li><a href="pageNotFound.html"> Pets</a></li>
+                                        <li><a href="pageNotFound.html"> Romantic</a></li>
+                                        <li><a href="pageNotFound.html"> Sport</a></li>
+                                        <li><a href="pageNotFound.html"> Toys</a></li>
+                                        <li><a href="pageNotFound.html"> Travel</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Women's Fashion</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="has-children">
                                     <a href="pageNotFound.html">Sale</a>
                                     <i class="fas fa-sort-down"></i>
+                                    <ul class="level3">
+                                        <li>
+                                            <a href="pageNotFound.html"> Accessories</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                        <li><a href="pageNotFound.html"> Art</a></li>
+                                        <li><a href="pageNotFound.html"> Books</a></li>
+                                        <li><a href="pageNotFound.html"> Drink</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Electronics</a>
+                                        </li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Food</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-children">
                             <a href="company.html">Company</a>
                             <i class="fas fa-sort-down"></i>
+                            <ul class="level2">
+                                <li>
+                                    <a href="pageNotFound.html"> Accessories</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                <li><a href="pageNotFound.html"> Art</a></li>
+                                <li><a href="pageNotFound.html"> Books</a></li>
+                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                <li>
+                                    <a href="pageNotFound.html"> Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Food</a></li>
+                            </ul>
                         </li>
                         <li class="has-children">
                             <a href="pageNotFound.html">Library</a>
                             <i class="fas fa-sort-down"></i>
+                            <ul class="level2">
+                                <li>
+                                    <a href="pageNotFound.html"> Accessories</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                <li><a href="pageNotFound.html"> Art</a></li>
+                                <li><a href="pageNotFound.html"> Books</a></li>
+                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                <li>
+                                    <a href="pageNotFound.html"> Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Food</a></li>
+                            </ul>
                         </li>
                         <li class="has-children">
                             <a href="contact.html">Contact Us</a>
                             <i class="fas fa-sort-down"></i>
+                            <ul class="level2">
+                                <li>
+                                    <a href="pageNotFound.html"> Accessories</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                <li><a href="pageNotFound.html"> Art</a></li>
+                                <li><a href="pageNotFound.html"> Books</a></li>
+                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                <li>
+                                    <a href="pageNotFound.html"> Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                </li>
+                                <li><a href="pageNotFound.html"> Food</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -219,7 +340,7 @@
                     <li><span>Category Landing Services</a></li>
                </ul>
             </div>
-            <h1 class="page-title">Ruffle Front V-Neck Cardigan</h1>
+            <h1 class="page-title"><span> Ruffle Front V-Neck Cardigan</span></h1>
          </div>
          </div>
       </section>
@@ -310,53 +431,54 @@
                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                                     </p>
                                     <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
-                                    <p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                                       Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
-                                       Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
-                                       Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. 
-                                       Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
-                                       Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                                       Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. 
-                                    </p>
+                                    
                                  </div>
                                  <div class="col-md-6 col-sm-12">
-                                    <p>
-                                       Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                    </p>
-                                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                                
                                     <p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
                                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
-                                       Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
-                                       Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. 
-                                       Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
-                                       Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
-                                       Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. 
+                                       Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
                                     </p>
                                  </div>
                               </div>
                            </div>
                            <div id="tabs-2">
+                             <div class="row">
+
+                             
                               <div class="col-md-6 col-sm-12">
                                  <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. 
                                     Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem.
-                                    Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. 
-                                    Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. 
-                                    Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.
-                                 </p>
+                                   </p>
                               </div>
                               <div class="col-md-6 col-sm-12">
                                  <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. 
                                     Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem.
-                                    Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. 
-                                    Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. 
-                                    Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.
+                                    
                                  </p>
                               </div>
+                            </div>
                            </div>
                            <div id="tabs-3">
-                              <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                              <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-                           </div>
+                             <div class="row">
+
+                             
+                              <div class="col-md-6 col-sm-12">
+                                  <p>
+                                     Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                  </p>
+                                  <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                                  
+                               </div>
+                               <div class="col-md-6 col-sm-12">
+                              
+                                  <p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                                     Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                                     Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                  </p>
+                               </div>
+                              </div>
+                            </div>
                         </div>
                      </div>
                   </div>
@@ -364,9 +486,9 @@
             </div>
          </div>
       </section>
-      <section class="popular-items">
+      <section class="popular-items background-peach">
             <div class="container">
-              <h2>Popular Items</h2>
+              <h2 class="section_title">Popular Items</h2>
                <div class="row">
                
                   </div>
@@ -653,7 +775,29 @@
             </div>
         </div>
         </footer>
+        <div id="myModal" class="modal fade modal-cookies" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <button type="button" class="btn btn-default" id="close" data-dismiss="modal">x</button>
+                <div class="modal-body">
+                    <h3>This website uses cookies</h3>
+                    <p>OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance 
+                        and interaction with social media offering publicity tailored to your interests. If you continue browsing, we consider that you accept its use. 
+                        <br/>You can expand this information consulting our <a href="../pages/pageNotFound.html">Cookies Policy Page</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn button" id="accept">Accept</button>
+                </div>
+                </div>
+            </div>
+        </div>
         <script src="../js/script.js"></script>
+        <script>
+           if ($("#tabs")) {
+              $("#tabs").tabs();
+            }
+        </script>
 </body>
 
 </html>

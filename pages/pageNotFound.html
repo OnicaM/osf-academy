@@ -14,29 +14,263 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="../slick/slick.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" ></script>
     <link rel="stylesheet" href="../slick/slick.css" />
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="container_content container_content-desktop clearfix">
-                <div class="logo">
-                    <div class="logo_content">
-                        <a href="../index.html">
-                            <img src="../images/logo.jpg" alt="OSF Logo" /></a>
-                        <div class="logo-text"><span>Osf</span><span>Academy</span></div>
-                    </div>
-                </div>
-                <nav>
-                    <ul class="level1">
-                        <li class="has-children">
-                            <a href="services.html">Services <i class="fas fa-sort-down"></i>
-                    </a>
-                            <ul class="level2">
+        <header>
+                <div class="container">
+                    <div class="container_content container_content-desktop clearfix">
+                        <div class="logo">
+                            <div class="logo_content">
+                                <a href="../index.html">
+                                    <img src="../images/logo.jpg" alt="OSF Logo" /></a>
+                                <div class="logo-text"><span>Osf</span><span>Academy</span></div>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul class="level1">
                                 <li class="has-children">
-                                    <span>Product categories</span>
-                                    <ul class="level3">
+                                    <a href="services.html">Services <i class="fas fa-sort-down"></i>
+                          </a>
+                                    <ul class="level2">
+                                        <li class="has-children">
+                                            <span>Product categories</span>
+                                            <ul class="level3">
+                                                <li>
+                                                    <a href="pageNotFound.html"> Accessories</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                                <li><a href="pageNotFound.html"> Art</a></li>
+                                                <li><a href="pageNotFound.html"> Books</a></li>
+                                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Electronics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Flowers & Plants</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Food</a></li>
+                                                <li><a href="pageNotFound.html"> Gadgets</a></li>
+                                                <li><a href="pageNotFound.html"> Garden</a></li>
+                                                <li><a href="pageNotFound.html"> Grocery</a></li>
+                                                <li><a href="pageNotFound.html"> Home</a></li>
+                                                <li><a href="pageNotFound.html"> Jewelry</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Kids & Baby</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Men's Fashion</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Mobile</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Motorcycles</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Movies</a></li>
+                                                <li><a href="pageNotFound.html"> Music</a></li>
+                                                <li><a href="pageNotFound.html"> Office</a></li>
+                                                <li><a href="pageNotFound.html"> Pets</a></li>
+                                                <li><a href="pageNotFound.html"> Romantic</a></li>
+                                                <li><a href="pageNotFound.html"> Sport</a></li>
+                                                <li><a href="pageNotFound.html"> Toys</a></li>
+                                                <li><a href="pageNotFound.html"> Travel</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Women's Fashion</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-children">
+                                            <span>Sale</span>
+                                            <ul class="level3">
+                                                <li>
+                                                    <a href="pageNotFound.html"> Accessories</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                                <li><a href="pageNotFound.html"> Art</a></li>
+                                                <li><a href="pageNotFound.html"> Books</a></li>
+                                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Electronics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Flowers & Plants</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Food</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="pageNotFound.html">Company</a></li>
+                                <li><a href="pageNotFound.html">Library</a></li>
+                                <li><a href="pageNotFound.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-dropdowns">
+                            <div class="language-switch">
+                                <span class="language-switch_text fas fa-sort-down">
+                          <span> EN</span></span>
+                            </div>
+                            <div class="coin-switch">
+                                <span class="coin-switch_text fas fa-sort-down">
+                          <span>$US</span></span>
+                            </div>
+                        </div>
+                        <div class="user-utilities">
+                            <span class="search-icon">
+                          <img src="../svg/loupe.svg" alt="Search" />
+                          </span>
+                          <span class="user-icon" data-toggle="modal" data-target=".bd-example-modal-xl-login">
+                                <img src="../svg/avatar.svg" alt="user" />
+                              </span>
+                            <span class="favorites-icon" data-toggle="modal" data-target=".bd-example-modal-xl-favorites">
+                            <span class="favorites-icon_count">0</span>
+                            <img src="../svg/like.svg" alt="like" />
+        
+                            </span>
+                            <span class="chart-icon" data-toggle="modal" data-target=".bd-example-modal-xl-cart">
+                            <span class="chart-icon_count">0</span>
+                            <img src="../svg/shopping-bag.svg" alt="shopping" />
+                            </span>
+        
+                            <div class=" modal fade bd-example-modal-xl-favorites">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+        
+                                        <div class="modal-header">
+                                            <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Favorites</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="favourites-products-container">
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="modal fade bd-example-modal-xl-login">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-content_container"> 
+            
+                                            
+                                            <div class="modal-header">
+                                                <h5 class="modal-title h4" id="myExtraLargeModalLabel">Sing in</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body-form">
+                                                <form>
+                                                    <label for="email">Email</label>
+                                                    <input type="email" name="email" id="email">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                                                    <div class="modal-action">
+                                                            <input type="submit" value="Login" class="button">
+                                                    </div>
+                                                    
+                                                </form>
+                                                <a href="/pages/pageNotFound.html">I don’t have an account</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="container_content container_content-mobile">
+                        <div class="toggle-nav">
+                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="logo">
+                            <a href="../index.html">
+                                <img src="../images/logo.jpg" alt="OSF Logo" /></a>
+                        </div>
+                        <nav class="nav-mobile dark">
+                            <ul class="level1">
+                                <li class="has-children">
+                                    <a href="services.html">Services</a>
+                                    <i class="fas fa-sort-down"></i>
+                                    <ul class="level2">
+                                        <li class="has-children">
+                                            <a href="pageNotFound.html">Product Cateogories</a>
+                                            <i class="fas fa-sort-down"></i>
+                                            <ul class="level3">
+                                                <li>
+                                                    <a href="pageNotFound.html"> Accessories</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                                <li><a href="pageNotFound.html"> Art</a></li>
+                                                <li><a href="pageNotFound.html"> Books</a></li>
+                                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Electronics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Food</a></li>
+                                                <li><a href="pageNotFound.html"> Gadgets</a></li>
+                                                <li><a href="pageNotFound.html"> Garden</a></li>
+                                                <li><a href="pageNotFound.html"> Grocery</a></li>
+                                                <li><a href="pageNotFound.html"> Home</a></li>
+                                                <li><a href="pageNotFound.html"> Jewelry</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Kids &amp; Baby</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Men's Fashion</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Mobile</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Motorcycles</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Movies</a></li>
+                                                <li><a href="pageNotFound.html"> Music</a></li>
+                                                <li><a href="pageNotFound.html"> Office</a></li>
+                                                <li><a href="pageNotFound.html"> Pets</a></li>
+                                                <li><a href="pageNotFound.html"> Romantic</a></li>
+                                                <li><a href="pageNotFound.html"> Sport</a></li>
+                                                <li><a href="pageNotFound.html"> Toys</a></li>
+                                                <li><a href="pageNotFound.html"> Travel</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Women's Fashion</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-children">
+                                            <a href="pageNotFound.html">Sale</a>
+                                            <i class="fas fa-sort-down"></i>
+                                            <ul class="level3">
+                                                <li>
+                                                    <a href="pageNotFound.html"> Accessories</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                                <li><a href="pageNotFound.html"> Art</a></li>
+                                                <li><a href="pageNotFound.html"> Books</a></li>
+                                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Electronics</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                                </li>
+                                                <li><a href="pageNotFound.html"> Food</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="company.html">Company</a>
+                                    <i class="fas fa-sort-down"></i>
+                                    <ul class="level2">
                                         <li>
                                             <a href="pageNotFound.html"> Accessories</a>
                                         </li>
@@ -48,40 +282,15 @@
                                             <a href="pageNotFound.html"> Electronics</a>
                                         </li>
                                         <li>
-                                            <a href="pageNotFound.html"> Flowers & Plants</a>
+                                            <a href="pageNotFound.html"> Flowers &amp; Plants</a>
                                         </li>
                                         <li><a href="pageNotFound.html"> Food</a></li>
-                                        <li><a href="pageNotFound.html"> Gadgets</a></li>
-                                        <li><a href="pageNotFound.html"> Garden</a></li>
-                                        <li><a href="pageNotFound.html"> Grocery</a></li>
-                                        <li><a href="pageNotFound.html"> Home</a></li>
-                                        <li><a href="pageNotFound.html"> Jewelry</a></li>
-                                        <li>
-                                            <a href="pageNotFound.html"> Kids & Baby</a>
-                                        </li>
-                                        <li>
-                                            <a href="pageNotFound.html"> Men's Fashion</a>
-                                        </li>
-                                        <li><a href="pageNotFound.html"> Mobile</a></li>
-                                        <li>
-                                            <a href="pageNotFound.html"> Motorcycles</a>
-                                        </li>
-                                        <li><a href="pageNotFound.html"> Movies</a></li>
-                                        <li><a href="pageNotFound.html"> Music</a></li>
-                                        <li><a href="pageNotFound.html"> Office</a></li>
-                                        <li><a href="pageNotFound.html"> Pets</a></li>
-                                        <li><a href="pageNotFound.html"> Romantic</a></li>
-                                        <li><a href="pageNotFound.html"> Sport</a></li>
-                                        <li><a href="pageNotFound.html"> Toys</a></li>
-                                        <li><a href="pageNotFound.html"> Travel</a></li>
-                                        <li>
-                                            <a href="pageNotFound.html"> Women's Fashion</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li class="has-children">
-                                    <span>Sale</span>
-                                    <ul class="level3">
+                                    <a href="pageNotFound.html">Library</a>
+                                    <i class="fas fa-sort-down"></i>
+                                    <ul class="level2">
                                         <li>
                                             <a href="pageNotFound.html"> Accessories</a>
                                         </li>
@@ -93,84 +302,36 @@
                                             <a href="pageNotFound.html"> Electronics</a>
                                         </li>
                                         <li>
-                                            <a href="pageNotFound.html"> Flowers & Plants</a>
+                                            <a href="pageNotFound.html"> Flowers &amp; Plants</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Food</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="contact.html">Contact Us</a>
+                                    <i class="fas fa-sort-down"></i>
+                                    <ul class="level2">
+                                        <li>
+                                            <a href="pageNotFound.html"> Accessories</a>
+                                        </li>
+                                        <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                        <li><a href="pageNotFound.html"> Art</a></li>
+                                        <li><a href="pageNotFound.html"> Books</a></li>
+                                        <li><a href="pageNotFound.html"> Drink</a></li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Electronics</a>
+                                        </li>
+                                        <li>
+                                            <a href="pageNotFound.html"> Flowers &amp; Plants</a>
                                         </li>
                                         <li><a href="pageNotFound.html"> Food</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a href="pageNotFound.html">Company</a></li>
-                        <li><a href="pageNotFound.html">Library</a></li>
-                        <li><a href="pageNotFound.html">Contact Us</a></li>
-                    </ul>
-                </nav>
-                <div class="header-dropdowns">
-                    <div class="language-switch">
-                        <span class="language-switch_text fas fa-sort-down">
-                    <span> EN</span></span>
-                    </div>
-                    <div class="coin-switch">
-                        <span class="coin-switch_text fas fa-sort-down">
-                    <span>$US</span></span>
+                        </nav>
                     </div>
                 </div>
-                <div class="user-utilities">
-                    <span class="search-icon">
-                  <img src="../svg/loupe.svg" alt="Search" />
-                </span>
-                    <span class="user-icon">
-                  <img src="../svg/avatar.svg" alt="user" />
-                </span>
-                    <span class="favorites-icon">
-                  <img src="../svg/like.svg" alt="like" />
-                </span>
-                    <span class="chart-icon">
-                  <img src="../svg/shopping-bag.svg" alt="shopping" />
-                </span>
-                </div>
-            </div>
-            <div class="container_content container_content-mobile">
-                <div class="toggle-nav">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../images/logo.jpg" alt="OSF Logo" /></a>
-                </div>
-                <nav class="nav-mobile dark">
-                    <ul class="level1">
-                        <li class="has-children">
-                            <a href="services.html">Services</a>
-                            <i class="fas fa-sort-down"></i>
-                            <ul class="level2">
-                                <li class="has-children">
-                                    <a href="pageNotFound.html">Product Cateogories</a>
-                                    <i class="fas fa-sort-down"></i>
-                                </li>
-                                <li class="has-children">
-                                    <a href="pageNotFound.html">Sale</a>
-                                    <i class="fas fa-sort-down"></i>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <a href="company.html">Company</a>
-                            <i class="fas fa-sort-down"></i>
-                        </li>
-                        <li class="has-children">
-                            <a href="pageNotFound.html">Library</a>
-                            <i class="fas fa-sort-down"></i>
-                        </li>
-                        <li class="has-children">
-                            <a href="contact.html">Contact Us</a>
-                            <i class="fas fa-sort-down"></i>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+            </header>
 
     <section class="background-peach">
         <div class="container">
@@ -180,7 +341,7 @@
                     <li><span>404</span></li>
                 </ul>
             </div>
-            <h1 class="page-title">404</h1>
+            <h1 class="page-title"><span>404</span></h1>
 
         </div>
         </div>
@@ -189,10 +350,10 @@
         <div class="container">
             <div class="page-not-found">
                 <div class="row">
-                    <div class="col-4 col-md-6 col-sm-12">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
                         <h3 class="mega-title">Oops!</h3>
                     </div>
-                    <div class="col-8 col-md-6 col-sm-12">
+                    <div class="col-lg-8 col-md-6 col-sm-12">
                         <h2>Sorry, this page could not be found!</h2>
                         <p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus.</p>
                         <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
@@ -202,6 +363,7 @@
                             <h2>Search our site</h2>
                             <form>
                                 <input type="text" placeholder="Search" name="search" class="input-search" />
+                                <input type="submit" value="search" name="sumbitSearch">
                             </form>
                         </div>
                     </div>
@@ -451,6 +613,23 @@
             </div>
         </div>
     </footer>
+    <div id="myModal" class="modal fade modal-cookies" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <button type="button" class="btn btn-default" id="close" data-dismiss="modal">x</button>
+                <div class="modal-body">
+                    <h3>This website uses cookies</h3>
+                    <p>OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance 
+                        and interaction with social media offering publicity tailored to your interests. If you continue browsing, we consider that you accept its use. 
+                        <br/>You can expand this information consulting our <a href="../pages/pageNotFound.html">Cookies Policy Page</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn button" id="accept">Accept</button>
+                </div>
+                </div>
+            </div>
+        </div>
     <script src="../js/script.js"></script>
 </body>
 
