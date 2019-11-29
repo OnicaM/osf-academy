@@ -4,85 +4,99 @@
       "id": 1,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "item2",
+      "price": 200
     },
     {
       "id": 2,
-      "name": "cccccccccc",
+      "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 3,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "item3",
+      "price": 200
     },
     {
       "id": 4,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "item4",
+      "price": 200
     },
     {
       "id": 5,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 6,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 7,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 8,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 9,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 10,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 11,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 12,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 13,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Awesome",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     },
     {
       "id": 14,
       "name": "Kristina Dam Oak Table With White Marble",
       "description": "Marketing",
-      "image": "img1"
+      "image": "img1",
+      "price": 200
     }
   ]
 }

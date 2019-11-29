@@ -825,12 +825,10 @@ h1.page-title {
   text-align: center;
   position: relative;
   > span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
     background: #f1edea;
     padding: 0 30px;
+    position: relative;
+    display: inline-block;
   }
 }
 h1.page-title:before {
@@ -840,7 +838,12 @@ h1.page-title:before {
   background: #e5e2df;
   display: inline-block;
   vertical-align: middle;
+  position: absolute;
   margin-right: 20px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 0;
 }
 /*Services*/
 .breadcrumbs {
@@ -1301,8 +1304,34 @@ ul.carousel-nav-list > li ~ li {
     display: inline-block;
     max-width: 19%;
   }
+  ul.carousel-nav-list {
+    height: auto !important;
+  }
 }
-
+.share {
+  * {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 35px;
+  }
+  span {
+    opacity: 0.5;
+    padding-right: 20px;
+  }
+  ul {
+    margin: 0;
+    li {
+      opacity: 1;
+      a {
+        color: #45413e;
+        opacity: 0.5;
+      }
+      a:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
 .ui-tabs-nav {
   padding: 0;
   list-style: none;
@@ -1397,6 +1426,67 @@ ul.carousel-nav-list > li ~ li {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sale-product {
+    .sale-product_description {
+      padding-left: 0;
+      padding-top: 50px;
+      h2.price {
+        font-size: 31px;
+      }
+    }
+    select#color {
+      min-width: 200px;
+    }
+    .add-product-wrapper {
+      flex-direction: column;
+      margin: 0 0 20px 0;
+      .input-wrap {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+.popular-items {
+  h2.section_title {
+    text-transform: uppercase;
+    margin: 25px 0;
+  }
+  ul.slick-dots li button {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  ul.slick-dots li.slick-active button {
+    background: transparent;
+    border: 2px solid #000;
+    width: 15px;
+    height: 15px;
+  }
+  .item {
+    .item_wrap {
+      img {
+        min-height: 260px;
+      }
+    }
+    .item_caption {
+      font-size: 16px;
+      color: #2c3e50;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 112px;
+      .price {
+        color: #bdc3c7;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 /*Modal login*/
 
 .modal-content_container {
@@ -1492,4 +1582,12 @@ ul.carousel-nav-list > li ~ li {
       }
     }
   }
+}
+.morecontent span {
+  display: none;
+}
+.morelink {
+  display: block;
+  margin-top: 15px;
+  color: #84bc22;
 }
