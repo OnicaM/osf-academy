@@ -108,15 +108,28 @@
                     </ul>
                 </nav>
                 <div class="header-dropdowns">
-                    <div class="language-switch">
-                        <span class="language-switch_text fas fa-sort-down">
-                  <span> EN</span></span>
+                        <div class="language-switch">
+                            <span class="language-switch_text fas fa-sort-down">
+                                <span> EN</span>
+                                
+                            </span>
+                            <div class="dropdown-switch">
+                                <span class="en">EN</span>
+                                <span class="ro">RO</span>
+                                <span class="uk">UK</span>
+                            </div>
+                        </div>
+                        <div class="coin-switch">
+                            <span class="coin-switch_text fas fa-sort-down">
+                                <span>$US</span>
+                            </span>
+                            <div class="dropdown-switch">
+                                <span class="en">EN</span>
+                                <span class="ro">RO</span>
+                                <span class="uk">UK</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="coin-switch">
-                        <span class="coin-switch_text fas fa-sort-down">
-                  <span>$US</span></span>
-                    </div>
-                </div>
                 <div class="user-utilities">
                     <span class="search-icon">
                   <img src="../svg/loupe.svg" alt="Search" />
@@ -418,6 +431,10 @@
   <div class="container">
     <div class="filter-results">
         <div class="row"></div>
+        <div class="more-action text-center">
+                <span class="button show-more-services">Show more</span>
+        </div>
+        
     </div>
   </div>
 
@@ -694,6 +711,31 @@
         </div>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+
+    $( document ).ready(function() {
+        // $( window ).load(function() {
+        //     if ($('.filter-results .item').length > 8) {
+        //     $('.filter-results .item:gt(3)').show();
+        //     $('.filter-results .item:gt(3)').next().addClass('hide');
+        //     $('.show-more-services').show();
+        //     }
+        // });
+        
+            
+        //     $('.show-more-services').on('click', function() {
+        //     $('.filter-results .item:gt(8)').toggle();
+        //     $(this).text() === 'Show more' ? $(this).text('Show less') : $(this).text('Show more');
+        //     });
+
+        $('.show-more-services').click(function () {
+        $('.filter-results .item:hidden').slice(0, 8).show();
+        
+         $(this).hide();
+    });
+    });
+       
+    </script>
 </body>
 
 </html>

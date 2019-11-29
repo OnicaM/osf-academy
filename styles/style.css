@@ -111,6 +111,8 @@ h2.section_title {
 h2.section_title span {
   display: block;
   font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 .container {
@@ -124,6 +126,7 @@ header {
   border-bottom: 1px solid #e8e2d6;
   padding: 10px 0 0 0;
   position: relative;
+  z-index: 3;
 }
 
 header .container_content-mobile {
@@ -179,12 +182,38 @@ header .container_content-desktop .logo div.logo-text span:first-child {
 
 header .container_content-desktop .header-dropdowns > div {
   margin: 0 20px;
+  position: relative;
+}
+
+header .container_content-desktop .header-dropdowns > div .dropdown-switch {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 45;
+  background: #fff;
+  opacity: 1;
+  border: 1px solid #ccc;
+  min-width: 75px;
+  display: none;
+}
+
+header .container_content-desktop .header-dropdowns > div .dropdown-switch > span {
+  display: block;
+  background: #fff;
+  padding: 5px 10px;
+  font-family: "Lato";
+}
+
+header .container_content-desktop .header-dropdowns > div.open > .dropdown-switch {
+  display: block;
 }
 
 header .container_content-desktop .header-dropdowns .language-switch_text,
 header .container_content-desktop .header-dropdowns .coin-switch_text {
   position: relative;
-  padding-right: 20px;
+  padding: 23px 20px 29px 0;
   cursor: pointer;
   opacity: 50%;
 }
@@ -1584,6 +1613,10 @@ ul.carousel-nav-list > li ~ li {
   margin: 20px 0;
 }
 
+.sale-product .add-product-wrapper .button {
+  line-height: 25px;
+}
+
 .sale-product .add-product-wrapper .input-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1690,6 +1723,7 @@ ul.carousel-nav-list > li ~ li {
   padding: 50px;
   text-align: center;
   color: #45413e;
+  position: relative;
 }
 
 .modal-content_container * {
@@ -1742,6 +1776,12 @@ ul.carousel-nav-list > li ~ li {
   margin: 0 auto;
   cursor: pointer;
   border-color: #84bc22;
+}
+
+.bd-example-modal-xl-login .modal-content .modal-header .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .modal.modal-cookies * {
@@ -1808,5 +1848,19 @@ ul.carousel-nav-list > li ~ li {
   display: block;
   margin-top: 15px;
   color: #84bc22;
+}
+
+.filter-results .item:nth-child(n + 8) {
+  display: none;
+}
+
+.more-action {
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-results .item:nth-child(n + 4) {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

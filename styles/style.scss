@@ -90,6 +90,8 @@ h2.section_title {
   span {
     display: block;
     font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
   }
 }
 .container {
@@ -103,6 +105,7 @@ header {
   border-bottom: 1px solid #e8e2d6;
   padding: 10px 0 0 0;
   position: relative;
+  z-index: 3;
   .container_content-mobile {
     display: none;
   }
@@ -148,11 +151,36 @@ header {
     .header-dropdowns {
       > div {
         margin: 0 20px;
+        position: relative;
+        .dropdown-switch {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          opacity: 1;
+          z-index: 45;
+          background: #fff;
+          opacity: 1;
+          border: 1px solid #ccc;
+          min-width: 75px;
+          display: none;
+          > span {
+            display: block;
+            background: #fff;
+            padding: 5px 10px;
+            font-family: "Lato";
+          }
+        }
+      }
+      > div.open {
+        > .dropdown-switch {
+          display: block;
+        }
       }
       .language-switch_text,
       .coin-switch_text {
         position: relative;
-        padding-right: 20px;
+        padding: 23px 20px 29px 0;
         cursor: pointer;
         opacity: 50%;
       }
@@ -1399,6 +1427,9 @@ ul.carousel-nav-list > li ~ li {
   .add-product-wrapper {
     display: flex;
     margin: 20px 0;
+    .button {
+      line-height: 25px;
+    }
     .input-wrap {
       display: flex;
       justify-content: flex-start;
@@ -1493,6 +1524,7 @@ ul.carousel-nav-list > li ~ li {
   padding: 50px;
   text-align: center;
   color: #45413e;
+  position: relative;
   * {
     display: block;
   }
@@ -1538,6 +1570,16 @@ ul.carousel-nav-list > li ~ li {
     }
   }
 }
+.bd-example-modal-xl-login {
+  .modal-content {
+    .modal-header .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}
+
 .modal.modal-cookies {
   * {
     font-size: 14px;
@@ -1590,4 +1632,16 @@ ul.carousel-nav-list > li ~ li {
   display: block;
   margin-top: 15px;
   color: #84bc22;
+}
+
+.filter-results .item:nth-child(n + 8) {
+  display: none;
+}
+.more-action {
+  margin: 20px 0;
+}
+@media screen and(max-width: 768px) {
+  .filter-results .item:nth-child(n + 4) {
+    display: none;
+  }
 }
