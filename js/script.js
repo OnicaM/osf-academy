@@ -24,16 +24,16 @@ window.onload = function() {
     showData(items.products);
   });
 
-  var promiseFeatured = get("../json/featuredProducts.json");
+  var promiseFeatured = get("/json/featuredProducts.json");
 
   promiseFeatured.then(items => displayFeaturedProducts(items.products));
 
-  var services = get("../json/popularItems.json");
+  var services = get("/json/popularItems.json");
   services.then(items => {
     displayServicesProduct(items.products);
   });
 
-  var popularItems = get("../json/featuredProducts.json");
+  var popularItems = get("/json/featuredProducts.json");
   popularItems.then(items => displayLastFourItems(items.products));
 };
 
@@ -110,7 +110,7 @@ function displayData(data) {
     div.innerHTML = `<div class="item_wrap ${item.class}">
     <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
     <div class="item_caption">
-    <p><a href="../pages/product.html">${item.name}</a></p>
+    <p><a href="/pages/product.html">${item.name}</a></p>
     <p class="price">$ ${item.price}</p>
     <div class="buttons-action">
       <div class="button-price"><span>$ ${item.price}</span> <button class="add-to-cart" data-id="${item.id}">Buy now</button></div>
