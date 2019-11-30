@@ -33,7 +33,7 @@ window.onload = function() {
     displayServicesProduct(items.products);
   });
 
-  var popularItems = get("json/featuredProducts.json");
+  var popularItems = get("../json/featuredProducts.json");
   popularItems.then(items => displayLastFourItems(items.products));
 };
 
