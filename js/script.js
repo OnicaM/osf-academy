@@ -24,7 +24,7 @@ window.onload = function() {
     showData(items.products);
   });
 
-  var promiseFeatured = get("/json/featuredProducts.json");
+  var promiseFeatured = get("json/featuredProducts.json");
 
   promiseFeatured.then(items => displayFeaturedProducts(items.products));
 
