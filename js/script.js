@@ -18,7 +18,7 @@ window.onload = function() {
     });
   }
 
-  var promise = get("../json/popularItems.json");
+  var promise = get("/json/popularItems.json");
 
   promise.then(items => {
     showData(items.products);
