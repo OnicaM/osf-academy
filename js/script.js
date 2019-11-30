@@ -18,17 +18,17 @@ window.onload = function() {
     });
   }
 
-  var promise = get("js/popularItems.json");
+  var promise = get("/js/popularItems.json");
 
   promise.then(items => {
     showData(items.products);
   });
 
-  var promiseFeatured = get("js/featuredProducts.json");
+  var promiseFeatured = get("/js/featuredProducts.json");
 
   promiseFeatured.then(items => displayFeaturedProducts(items.products));
 
-  var services = get("js/popularItems.json");
+  var services = get("/js/popularItems.json");
   services.then(items => {
     displayServicesProduct(items.products);
   });
