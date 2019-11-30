@@ -108,7 +108,7 @@ function displayData(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap ${item.class}">
-    <a href="pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+    <a href="pages/product.html"><img src="/images/${item.image}.png" alt="${item.name}"></a>
     <div class="item_caption">
     <p><a href="pages/product.html">${item.name}</a></p>
     <p class="price">$ ${item.price}</p>
