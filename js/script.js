@@ -286,7 +286,7 @@ function displayLastFourItems(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-  <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+  <a href="../pages/product.html"><img src="images/${item.image}.png" alt="${item.name}"></a>
       <div class="item_caption">
       <span class="item-title"><a href="../pages/product.html">${item.name}</a></span>
       <span class="price">$ ${item.price}</span>
