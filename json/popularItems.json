@@ -3,62 +3,62 @@
     {
       "id": 1,
       "name": "Kristina Dam Oak Table With White Marble Top",
-      "price": 200,
+      "price": 799.55,
       "description": "product description here",
       "image": "img1",
       "class": "no-buttons"
     },
     {
       "id": 2,
-      "name": "product name2",
-      "price": 200,
+      "name": "Hay - About A Lounge Chair AAL 93",
+      "price": 659.55,
       "description": "product description here",
       "image": "item2",
       "class": "add-button"
     },
     {
       "id": 3,
-      "name": "product name3",
-      "price": 200,
+      "name": "Activate Facial Mask and Charcoal Soap",
+      "price": 129.55,
       "description": "product description here",
       "image": "item3",
       "class": "overlay-buttons"
     },
     {
       "id": 4,
-      "name": "product name4",
-      "price": 200,
+      "name": "Cocktail Table Walnut <br>| YES",
+      "price": 299.99,
       "description": "product description here",
       "image": "item4",
       "class": "no-buttons"
     },
     {
       "id": 5,
-      "name": "product name5",
-      "price": 200,
+      "name": "Hay - About A Lounge <br> Chair AAL 93",
+      "price": 659.55,
       "description": "product description here",
       "image": "item5",
       "class": "no-buttons"
     },
     {
       "id": 6,
-      "name": "product name6",
-      "price": 200,
+      "name": "TORY DESK CALENDAR",
+      "price": 410.99,
       "description": "product description here",
-      "image": "img1",
+      "image": "item2",
       "class": "no-buttons"
     },
     {
       "id": 7,
-      "name": "product name7",
+      "name": "CH445 Wing Chair on <br>SUITE NY",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item4",
       "class": "no-buttons"
     },
     {
       "id": 8,
-      "name": "product name8",
+      "name": "Hay - About A Lounge <br> Chair AAL 93",
       "price": 200,
       "description": "product description here",
       "image": "img1",
@@ -66,10 +66,10 @@
     },
     {
       "id": 9,
-      "name": "product name9",
+      "name": "CH445 Wing Chair on <br>SUITE NY",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "image-nav",
       "class": "no-buttons"
     },
     {
@@ -77,7 +77,23 @@
       "name": "Kristina Dam Oak Table With White Marble Top",
       "price": 200,
       "description": "product description here",
-      "image": "img1",
+      "image": "item5",
+      "class": "no-buttons"
+    },
+    {
+      "id": 11,
+      "name": "Kristina Dam Oak Table With White Marble Top",
+      "price": 200,
+      "description": "product description here",
+      "image": "item5",
+      "class": "no-buttons"
+    },
+    {
+      "id": 12,
+      "name": "Kristina Dam Oak Table With White Marble Top",
+      "price": 200,
+      "description": "product description here",
+      "image": "item5",
       "class": "no-buttons"
     }
   ]

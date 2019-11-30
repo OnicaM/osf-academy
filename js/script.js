@@ -1,27 +1,4 @@
 window.onload = function() {
-  //===============rewrite index content with ajax==========
-
-  // var requestPage = new XMLHttpRequest();
-
-  // requestPage.onreadystatechange = function() {
-  //   if (requestPage.readyState === 4) {
-  //     document.getElementById("main").innerHTML = requestPage.responseText;
-  //   }
-  // };
-
-  // var link = document.querySelectorAll("nav ul > li > a");
-
-  // link.forEach((item, index) => {
-  //   item.addEventListener("click", function(e) {
-  //     e.preventDefault();
-  //     var url = this.href;
-  //     var urlSplit = url.split("#");
-  //     console.log(urlSplit);
-  //     requestPage.open("GET", "pages/" + urlSplit[1] + ".html");
-  //     requestPage.send();
-  //   });
-  // });
-  //========================================================
   function get(url) {
     return new Promise(function(resolve, reject) {
       var xhttp = new XMLHttpRequest();
@@ -71,7 +48,6 @@ var displayMyFavorites = JSON.parse(myFavorites);
 if (displayMyCart && displayMyCart.length >= 0) {
   displayMyCart.forEach(item => {
     $(".chart-icon_count").text(item.quantity);
-    console.log(item);
   });
 } else {
   $(".chart-icon_count").text("0");
@@ -80,7 +56,6 @@ if (displayMyCart && displayMyCart.length >= 0) {
 if (displayMyFavorites && displayMyFavorites.length >= 0) {
   displayMyFavorites.forEach(item => {
     $(".favorites-icon_count").text(item.quantity);
-    console.log(item);
   });
 } else {
   $(".chart-icon_count").text("0");
@@ -91,21 +66,20 @@ function displayProductsInCart() {
   var div = document.createElement("div");
   if (displayMyCart) {
     displayMyCart.forEach(item => {
-      console.log("display: ", item);
-
       div.classList.add("item");
       div.innerHTML = `<div class="item_wrap">
-      <div class="item_name">
-       ${item.quantity}x   ${item.name}
-      <p class="price">$ ${item.price}</p>
-      </div>
-      </div>`;
+    <div class="item_name">
+     ${item.quantity}x   ${item.name}
+    <p class="price">$ ${item.price}</p>
+    </div>
+    </div>`;
     });
     if (container) {
       container.appendChild(div);
     }
   }
 }
+
 function displayProductsInFavorites() {
   var containerF = document.querySelector(".favourites-products-container");
   var div = document.createElement("div");
@@ -113,11 +87,11 @@ function displayProductsInFavorites() {
     displayMyFavorites.forEach(item => {
       div.classList.add("item");
       div.innerHTML = `<div class="item_wrap">
-      <div class="item_name">
-       ${item.quantity}x   ${item.name}
-      <p class="price">$ ${item.price}</p>
-      </div>
-      </div>`;
+    <div class="item_name">
+     ${item.quantity}x   ${item.name}
+    <p class="price">$ ${item.price}</p>
+    </div>
+    </div>`;
     });
     if (containerF) {
       containerF.appendChild(div);
@@ -134,22 +108,23 @@ function displayData(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap ${item.class}">
-      <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-      <div class="item_caption">
-      <p>${item.name}</p>
-      <p class="price">$ ${item.price}</p>
+    <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+    <div class="item_caption">
+    <p><a href="../pages/product.html">${item.name}</a></p>
+    <p class="price">$ ${item.price}</p>
+    <div class="buttons-action">
+      <div class="button-price"><span>$ ${item.price}</span> <button class="add-to-cart" data-id="${item.id}">Buy now</button></div>
+      <div class="buttons-overlay">
+        <button class="add-to-cart fas fa-plus" data-id="${item.id}"></button><button class="add-to-favorites fas fa-heart"  data-id="${item.id}"></button>
       </div>
-      <div class="buttons-action">
-        <div class="button-price"><span>$ ${item.price}</span> <button class="add-to-cart" data-id="${item.id}">Buy now</button></div>
-        <div class="buttons-overlay">
-          <button class="add-to-cart fas fa-plus" data-id="${item.id}"></button><button class="add-to-favorites fas fa-heart"  data-id="${item.id}"></button>
-        </div>
-        <div class="overlay-background">
-          <span class="overlay-text">My dragons are misbehaving again. Unbelieveable!</span>
-          <span class="overlay-ic">5H AGO</span>
-        </div>
+      <div class="overlay-background">
+        <span class="overlay-text">My dragons are misbehaving again. Unbelieveable!</span>
+        <span class="overlay-ic">5H AGO</span>
       </div>
-      </div>`;
+    </div>
+    </div>
+    
+    </div>`;
 
     if (container) {
       container.appendChild(div);
@@ -193,31 +168,16 @@ function displayData(data) {
       return obj.id == elemId;
     });
 
-    // if (cart.length === 0 || productFound(obj.id) === undefined) {
-    //   cart.push({
-    //     id: obj.id,
-    //     name: obj.name,
-    //     quantity: 1,
-    //     price: obj.price
-    //   });
-    //   localStorage.setItem("myCart", JSON.stringify(cart));
-    //   console.log(cart);
-    // } else {
-    //   cart.forEach(function(item) {
-    //     if (item.id === obj.id) {
-    //       item.quantity++;
-    //     }
-    //   });
-    // }
     cart.push({
       id: obj.id,
       name: obj.name,
       quantity: 1,
       price: obj.price
     });
-    console.log("cart items: ", cart);
+
     localStorage.setItem("myCart", JSON.stringify(cart));
   }
+
   function addToFavorites(elemId, data) {
     var obj = data.find(function(obj) {
       return obj.id == elemId;
@@ -230,18 +190,6 @@ function displayData(data) {
     });
     localStorage.setItem("myFavorites", JSON.stringify(favorites));
   }
-
-  // var productFound = function(productId) {
-  //   return cart.find(function(item) {
-  //     return item.id === productId;
-  //   });
-  // };
-  // var favProductFound = function(productId) {
-  //   return favorites.find(function(item) {
-  //     return item.id === productId;
-  //   });
-  // };
-  //end add to cart
 
   function mobileOnlySlider() {
     $(".products--popular .row").slick({
@@ -278,12 +226,12 @@ function displayFeaturedProducts(data) {
     div.classList.add("item");
 
     div.innerHTML = `<div class="item_wrap">
-        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-        <div class="item_caption">
-        <span class="item-title">${item.name}</span>
-        <span class="description">${item.description}</span>
-        </div>
-        </div>`;
+  <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+      <div class="item_caption">
+      <span class="item-title"><a href="../pages/product.html">${item.name}</a></span>
+      <span class="description">${item.description}</span>
+      </div>
+      </div>`;
 
     if (featuredContainer) {
       featuredContainer.appendChild(div);
@@ -327,6 +275,7 @@ function displayFeaturedProducts(data) {
     ]
   });
 }
+
 function displayLastFourItems(data) {
   var sliceData = data.slice(0, 4);
   var popular = document.querySelector(".popular-items .row");
@@ -337,12 +286,12 @@ function displayLastFourItems(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-        <div class="item_caption">
-        <span class="item-title">${item.name}</span>
-        <span class="price">$ ${item.price}</span>
-        </div>
-        </div>`;
+  <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+      <div class="item_caption">
+      <span class="item-title"><a href="../pages/product.html">${item.name}</a></span>
+      <span class="price">$ ${item.price}</span>
+      </div>
+      </div>`;
 
     if (popular) {
       popular.appendChild(div);
@@ -352,25 +301,7 @@ function displayLastFourItems(data) {
 }
 
 function showData(dataToDisplay) {
-  var loadMore = document.querySelector(".more .button--more"),
-    loadLess = document.querySelector(".more .button--less"),
-    showLess = dataToDisplay.slice(0, 8),
-    hiddenData = dataToDisplay.length - showLess.length,
-    showMore = dataToDisplay.splice(9, hiddenData);
-  var fullProducts = showLess.concat(showMore);
-
-  displayData(showLess);
-  // console.log("show less: ", showLess);
-  // console.log("show more ", showMore);
-  if (loadMore) {
-    loadMore.addEventListener("click", function(e) {
-      // e.preventDefault();
-      this.classList.add("hidden");
-      loadMore.classList.remove("hidden");
-
-      displayData(showLess);
-    });
-  }
+  displayData(dataToDisplay);
 }
 
 function displayServicesProduct(data) {
@@ -382,12 +313,12 @@ function displayServicesProduct(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-        <img src="/images/popularItems/${item.image}.png" alt="${item.name}">
-        <div class="item_caption">
-        <span class="item-title">${item.name}</span>
-        <span class="price">$ ${item.price}</span>
-        </div>
-        </div>`;
+  <a href="../pages/product.html"><img src="/images/popularItems/${item.image}.png" alt="${item.name}"></a>
+      <div class="item_caption">
+      <span class="item-title"><a href="../pages/product.html">${item.name}</a></span>
+      <span class="price">$ ${item.price}</span>
+      </div>
+      </div>`;
 
     if (servicesContainer) {
       servicesContainer.appendChild(div);
@@ -405,7 +336,6 @@ $(".banner-slider").slick({
   dots: true,
   infinite: true,
   speed: 500,
-  // fade: true,
   cssEase: "linear",
   arrows: false
 });
@@ -419,13 +349,14 @@ function mobileOnlySlider() {
     arrows: false
   });
 }
+
 function pupularItemsSlider() {
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 769) {
     mobileOnlySlider();
   }
 
   $(window).resize(function(e) {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 769) {
       if (!$(".popular-items .row").hasClass("slick-initialized")) {
         mobileOnlySlider();
       }
@@ -460,7 +391,6 @@ function accordion() {
     .hide(300)
     .removeClass("open");
   $(".footer-info h4").click(function(e) {
-    // Grab current anchor value
     var currentAttrValue = $(this).attr("href");
 
     if ($(e.target).is(".active")) {
@@ -468,9 +398,7 @@ function accordion() {
     } else {
       close_accordion_section();
 
-      // Add active class to section title
       $(this).addClass("active");
-      // Open up the hidden content panel
       $(this)
         .next(".footer-info_description")
         .slideDown(300)
@@ -480,6 +408,7 @@ function accordion() {
     e.preventDefault();
   });
 }
+
 function toggleMobileNav() {
   $(".nav-mobile").hide();
   $(".toggle-nav").on("click", function() {
@@ -591,6 +520,7 @@ function cookies() {
     }
   }, 10000);
 }
+
 function toggleDropdownsHeader() {
   $(".header-dropdowns > div").on("click", function() {
     $(this).toggleClass("open");
@@ -600,22 +530,143 @@ function toggleDropdownsHeader() {
   });
 }
 
+function showMore() {
+  $(".show-less-services").hide();
+  $(".show-more-services").click(function() {
+    $(".filter-results .item:hidden")
+      .slice(0, 8)
+      .show();
+
+    $(this).hide();
+    $(".show-less-services").show();
+  });
+
+  var size_li = $(".filter-results .item").size();
+  var x = 8;
+  $(".filter-results .item")
+    .slice(0, 7)
+    .show();
+
+  $(".show-less-services").click(function() {
+    var showLess = size_li - 8;
+    x = showLess < 0 ? 8 : size_li - showLess;
+    $(".filter-results .item")
+      .not(":lt(" + x + ")")
+      .hide();
+    $(this).hide();
+    $(".show-more-services").show();
+  });
+}
+
+function showMorePopular() {
+  $(".button--less").hide();
+  $(".button--more").click(function() {
+    $(".products--popular .item:hidden")
+      .slice(0, 8)
+      .show();
+
+    $(this).hide();
+    $(".button--less").show();
+  });
+
+  var size_li = $(".products--popular .item").size();
+  var x = 8;
+  $(".products--popular .item")
+    .slice(0, 7)
+    .show();
+
+  $(".button--less").click(function() {
+    var showLess = size_li - 8;
+    x = showLess < 0 ? 8 : size_li - showLess;
+    $(".products--popular .item")
+      .not(":lt(" + x + ")")
+      .hide();
+    $(this).hide();
+    $(".button--more").show();
+  });
+}
+
+function showMoreText() {
+  var showChar = 100;
+  var ellipsestext = "...";
+  var moretext = "Read more";
+  var lesstext = "Read less";
+
+  $(".product-info_text").each(function() {
+    var content = $(this).html();
+
+    if (content.length > showChar) {
+      var c = content.substr(0, showChar);
+      var h = content.substr(showChar, content.length - showChar);
+
+      var html =
+        c +
+        '<span class="moreellipses">' +
+        ellipsestext +
+        '&nbsp;</span><span class="morecontent"><span>' +
+        h +
+        '</span>&nbsp;&nbsp;<a href="" class="morelink">' +
+        moretext +
+        "</a></span>";
+
+      $(this).html(html);
+    }
+  });
+
+  $(".morelink").click(function() {
+    if ($(this).hasClass("less")) {
+      $(this).removeClass("less");
+      $(this).html(moretext);
+    } else {
+      $(this).addClass("less");
+      $(this).html(lesstext);
+    }
+    $(this)
+      .parent()
+      .prev()
+      .toggle();
+    $(this)
+      .prev()
+      .toggle();
+    return false;
+  });
+}
+
+function scrollTopDom() {
+  $(".scroll-top span").click(function() {
+    $("html, body").animate(
+      {
+        scrollTop: 0
+      },
+      "slow"
+    );
+    return false;
+  });
+}
+
 function init() {
   getCurrentYear();
   toggleMobileNav();
-  //showHide();
 
   productCarousel();
   openNavPages();
   const mq = window.matchMedia("(max-width: 768px)");
 
-  if (mq.matches) {
-    accordion();
-  }
+  $(window)
+    .on("resize", function() {
+      if (mq.matches) {
+        accordion();
+      }
+    })
+    .resize();
   displayProductsInCart();
   displayProductsInFavorites();
   cookies();
   toggleDropdownsHeader();
+  showMore();
+  showMorePopular();
+  showMoreText();
+  scrollTopDom();
 }
 
 $(document).ready(function() {

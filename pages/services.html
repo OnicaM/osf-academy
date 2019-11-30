@@ -15,7 +15,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../slick/slick.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <link rel="stylesheet" href="../slick/slick.css" />
 </head>
 
@@ -33,8 +33,7 @@
                 <nav>
                     <ul class="level1">
                         <li class="has-children">
-                            <a href="services.html">Services <i class="fas fa-sort-down"></i>
-                  </a>
+                            <a href="services.html">Services <i class="fas fa-sort-down"></i></a>
                             <ul class="level2">
                                 <li class="has-children">
                                     <span>Product categories</span>
@@ -108,36 +107,35 @@
                     </ul>
                 </nav>
                 <div class="header-dropdowns">
-                        <div class="language-switch">
-                            <span class="language-switch_text fas fa-sort-down">
+                    <div class="language-switch">
+                        <span class="language-switch_text fas fa-sort-down">
                                 <span> EN</span>
-                                
-                            </span>
-                            <div class="dropdown-switch">
-                                <span class="en">EN</span>
-                                <span class="ro">RO</span>
-                                <span class="uk">UK</span>
-                            </div>
-                        </div>
-                        <div class="coin-switch">
-                            <span class="coin-switch_text fas fa-sort-down">
-                                <span>$US</span>
-                            </span>
-                            <div class="dropdown-switch">
-                                <span class="en">EN</span>
-                                <span class="ro">RO</span>
-                                <span class="uk">UK</span>
-                            </div>
+                        </span>
+                        <div class="dropdown-switch">
+                            <span class="en">EN</span>
+                            <span class="ro">RO</span>
+                            <span class="uk">UK</span>
                         </div>
                     </div>
+                    <div class="coin-switch">
+                        <span class="coin-switch_text fas fa-sort-down">
+                                <span>$US</span>
+                        </span>
+                        <div class="dropdown-switch">
+                            <span class="en">EN</span>
+                            <span class="ro">RO</span>
+                            <span class="uk">UK</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="user-utilities">
                     <span class="search-icon">
                   <img src="../svg/loupe.svg" alt="Search" />
                   </span>
-                  <span class="user-icon" data-toggle="modal" data-target=".bd-example-modal-xl-login">
+                    <span class="user-icon" data-toggle="modal" data-target=".bd-example-modal-xl-login">
                       <img src="../svg/avatar.svg" alt="user" />
                     </span>
-                    <span class="favorites-icon" data-toggle="modal" data-target=".bd-example-modal-xl-favorites">
+                    <span class="favorites-icon">
                     <span class="favorites-icon_count">0</span>
                     <img src="../svg/like.svg" alt="like" />
 
@@ -147,54 +145,35 @@
                     <img src="../svg/shopping-bag.svg" alt="shopping" />
                     </span>
 
-                    <div class=" modal fade bd-example-modal-xl-favorites">
+                    <div class="modal fade bd-example-modal-xl-login">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
+                                <div class="modal-content_container">
 
-                                <div class="modal-header">
-                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">My Favorites</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="favourites-products-container">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title h4" id="myExtraLargeModalLabel">Sing in</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body-form">
+                                        <form>
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+                                            <div class="modal-action">
+                                                <input type="submit" value="Login" class="button">
+                                            </div>
 
+                                        </form>
+                                        <a href="/pages/pageNotFound.html">I don’t have an account</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade bd-example-modal-xl-login">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-content_container"> 
 
-                                
-                                <div class="modal-header">
-                                    <h5 class="modal-title h4" id="myExtraLargeModalLabel">Sing in</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body-form">
-                                    <form>
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" id="email">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
-                                        <div class="modal-action">
-                                                <input type="submit" value="Login" class="button">
-                                        </div>
-                                        
-                                    </form>
-                                    <a href="/pages/pageNotFound.html">I don’t have an account</a>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                   
                 </div>
             </div>
             <div class="container_content container_content-mobile">
@@ -352,104 +331,103 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><span>Category Landing Services</a></li>
-      </ul>
-    </div>
-    <h1 class="page-title"> <span> Services</span></h1>
+        </ul>
+        </div>
+        <h1 class="page-title"> <span> Services</span></h1>
+            </div>
+    </section>
+    <section class="background-peach">
+        <div class="container">
+            <div class="filter">
+                <form>
+                    <div class="form_container-content">
+                        <div class="form_item">
+                            <label for="price">Price</label>
+                            <select name="price" id="price">
+                                <option value="100">$0.00 - $100.000</option>
+                                <option value="100">$0.00 - $100.000</option>
+                                <option value="100">$0.00 - $100.000</option>
+                                <option value="100">$0.00 - $100.000</option>
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label for="brand">Brands</label>
+                            <select name="brand" id="brand">
+                                <option value="ukraine">Ukraine sport</option>
+                                <option value="ukraine">Romanian sport</option>
+                                <option value="ukraine">Brazilian sport</option>
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label for="size">Size</label>
+                            <select name="size" id="size">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                                <option value="xlarge">Extra Large</option>
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label>Color</label>
+                            <div class="check-color">
+                                <input type="checkbox" name="black" value="black" checked class="input-black" />
+                                <input type="checkbox" name="blue" value="blue" class="input-blue" />
+                                <input type="checkbox" name="darkgreen" value="darkgreen" class="input-darkgreen" />
+                                <input type="checkbox" name="green" value="green" class="input-green" />
+                                <input type="checkbox" name="indigo" value="indigo" class="input-indigo" />
+                                <input type="checkbox" name="orange" value="orange" class="input-orange" />
+                                <input type="checkbox" name="red" value="red" class="input-red" />
+                                <input type="checkbox" name="ivory" value="red" class="input-ivory" />
+                            </div>
+                        </div>
+                        <div class="form_item">
+                            <label for="sort">Sort by</label>
+                            <select name="sort" id="sort">
+                                <option value="priceasc">Price ascending</option>
+                                <option value="pricedesc">Price descending</option>
+                                <option value="newest">Newest</option>
+                                <option value="orders">Order</option>
+                            </select>
+                        </div>
+                        <div class="form_item">
+                            <label for="show">Show</label>
+                            <select name="show" id="show">
+                                <option value="16">16 per page</option>
+                                <option value="16">20 per page</option>
+                                <option value="16">30 per page</option>
+                                <option value="16">50 per page</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-<section class="background-peach">
-  <div class="container">
-    <div class="filter">
-      <form>
-        <div class="form_container-content">
-        <div class="form_item">
-          <label for="price">Price</label>
-          <select name="price" id="price">
-            <option value="100">$0.00 - $100.000</option>
-            <option value="100">$0.00 - $100.000</option>
-            <option value="100">$0.00 - $100.000</option>
-            <option value="100">$0.00 - $100.000</option>
-          </select>
-        </div>
-        <div class="form_item">
-            <label for="brand">Brands</label>
-            <select name="brand" id="brand">
-              <option value="ukraine">Ukraine sport</option>
-              <option value="ukraine">Romanian sport</option>
-              <option value="ukraine">Brazilian sport</option>
-            </select>
-        </div>
-        <div class="form_item">
-            <label for="size">Size</label>
-            <select name="size" id="size">
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-              <option value="xlarge">Extra Large</option>
-            </select>
-        </div>
-        <div class="form_item">
-          <label>Color</label>
-          <div class="check-color">
-            <input type="checkbox" name="black" value="black" checked class="input-black"/> 
-            <input type="checkbox" name="blue" value="blue" class="input-blue" />
-            <input type="checkbox" name="darkgreen" value="darkgreen" class="input-darkgreen" /> 
-            <input type="checkbox" name="green" value="green" class="input-green" /> 
-            <input type="checkbox" name="indigo" value="indigo" class="input-indigo" />
-            <input type="checkbox" name="orange" value="orange" class="input-orange" /> 
-            <input type="checkbox" name="red" value="red" class="input-red" /> 
-            <input type="checkbox" name="ivory" value="red" class="input-ivory" /> 
-          </div>
-        </div>
-        <div class="form_item">
-            <label for="sort">Sort by</label>
-            <select name="sort" id="sort">
-              <option value="priceasc">Price ascending</option>
-              <option value="pricedesc">Price descending</option>
-              <option value="newest">Newest</option>
-              <option value="orders">Order</option>
-            </select>
-        </div>
-        <div class="form_item">
-            <label for="show">Show</label>
-            <select name="show" id="show">
-              <option value="16">16 per page</option>
-              <option value="16">20 per page</option>
-              <option value="16">30 per page</option>
-              <option value="16">50 per page</option>
-            </select>
-        </div>
-      </div>
-      </form>
-    </div>
-  </div>
-</section>
+    <section class="background-peach">
+        <div class="container">
+            <div class="filter-results">
+                <div class="row"></div>
+                <div class="more-action text-center">
+                    <span class="button show-more-services">Show more</span>
+                    <span class="button show-less-services">Show less</span>
+                </div>
 
-<section class="background-peach">
-  <div class="container">
-    <div class="filter-results">
-        <div class="row"></div>
-        <div class="more-action text-center">
-                <span class="button show-more-services">Show more</span>
+            </div>
         </div>
-        
-    </div>
-  </div>
 
-</section>
-<section class="products products--featured background--dark">
-    <div class="container dark text-center">
-      <h2 class="section_title">
+    </section>
+    <section class="products products--featured background--dark">
+        <div class="container dark text-center">
+            <h2 class="section_title">
         Featured Products
         <span> Unde omnis iste natus error sit voluptatem</span>
                         </h2>
-                        <div class="slider-nav">
-                            <div class="divider"><span>///</span></div>
-                        </div>
-                        <div class="row"></div>
+            <div class="slider-nav">
+                <div class="divider"><span>///</span></div>
             </div>
+            <div class="row"></div>
+        </div>
     </section>
     <footer>
         <div class="container">
@@ -465,9 +443,10 @@
                             Headquarters:
                             <br /> 5600, Blvd. des Galeries, Bur 530
                             <br /> Québec, Québec G2K 2H6
-                            <br /> contact@osf-global.com
+                            <br /> <a href="mailto:contact@osf-global.com">contact@osf-global.com</a>
 
-                            <br /> +1 (888) 548-4344
+                            <br /> <a href="tel:+1 (888) 548-4344">+1 (888) 548-4344</a>
+
                         </div>
                     </div>
                 </div>
@@ -476,27 +455,27 @@
                         <h4>Categoriest <i class="fas fa-sort-down"></i></h4>
                         <div class="footer-info_description">
                             <ul>
-                                <li><a href="#"> Accessories</a></li>
-                                <li><a href="#"> Alcohol</a></li>
-                                <li><a href="#"> Art</a></li>
-                                <li><a href="#"> Books</a></li>
-                                <li><a href="#"> Drink</a></li>
-                                <li><a href="#"> Electronics</a></li>
+                                <li><a href="pageNotFound.html"> Accessories</a></li>
+                                <li><a href="pageNotFound.html"> Alcohol</a></li>
+                                <li><a href="pageNotFound.html"> Art</a></li>
+                                <li><a href="pageNotFound.html"> Books</a></li>
+                                <li><a href="pageNotFound.html"> Drink</a></li>
+                                <li><a href="pageNotFound.html"> Electronics</a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"> Home</a></li>
-                                <li><a href="#"> Jewelry</a></li>
-                                <li><a href="#"> Kids &amp; Baby</a></li>
-                                <li><a href="#"> Men's Fashion</a></li>
-                                <li><a href="#"> Mobile</a></li>
-                                <li><a href="#"> Motorcycles</a></li>
-                                <li><a href="#"> Movies</a></li>
+                                <li><a href="pageNotFound.html"> Home</a></li>
+                                <li><a href="pageNotFound.html"> Jewelry</a></li>
+                                <li><a href="pageNotFound.html"> Kids &amp; Baby</a></li>
+                                <li><a href="pageNotFound.html"> Men's Fashion</a></li>
+                                <li><a href="pageNotFound.html"> Mobile</a></li>
+                                <li><a href="pageNotFound.html"> Motorcycles</a></li>
+                                <li><a href="pageNotFound.html"> Movies</a></li>
                             </ul>
                             <ul>
-                                <li><a href="#"> Sport</a></li>
-                                <li><a href="#"> Toys</a></li>
-                                <li><a href="#"> Travel</a></li>
-                                <li><a href="#"> Women's Fashion</a></li>
+                                <li><a href="pageNotFound.html"> Sport</a></li>
+                                <li><a href="pageNotFound.html"> Toys</a></li>
+                                <li><a href="pageNotFound.html"> Travel</a></li>
+                                <li><a href="pageNotFound.html"> Women's Fashion</a></li>
                             </ul>
                         </div>
                     </div>
@@ -506,10 +485,10 @@
                         <h4>About <i class="fas fa-sort-down"></i></h4>
                         <div class="footer-info_description">
                             <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="pageNotFound.html">About us</a></li>
+                                <li><a href="pageNotFound.html">Delivery</a></li>
+                                <li><a href="pageNotFound.html">Testimonials</a></li>
+                                <li><a href="pageNotFound.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -518,16 +497,16 @@
                     <div class="footer-info">
                         <ul class="list list--social">
                             <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/OSFGlobalServices" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="pageNotFound.html"><i class="fab fa-google-plus-g"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/osfglobal" target="_blank"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="pageNotFound.html"><i class="fab fa-pinterest-p"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -696,46 +675,21 @@
     <div id="myModal" class="modal fade modal-cookies" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-                    <button type="button" class="btn btn-default" id="close" data-dismiss="modal">x</button>
-            <div class="modal-body">
-                <h3>This website uses cookies</h3>
-                <p>OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance 
-                    and interaction with social media offering publicity tailored to your interests. If you continue browsing, we consider that you accept its use. 
-                    <br/>You can expand this information consulting our <a href="../pages/pageNotFound.html">Cookies Policy Page</a>.</p>
-            </div>
-            <div class="modal-footer">
-                
-                <button type="button" class="btn button" id="accept">Accept</button>
-            </div>
+                <button type="button" class="btn btn-default" id="close" data-dismiss="modal">x</button>
+                <div class="modal-body">
+                    <h3>This website uses cookies</h3>
+                    <p>OSF uses its own and third-party cookies for statistical purposes, to know your preferences, for website performance and interaction with social media offering publicity tailored to your interests. If you continue browsing, we consider that you accept its use.
+                        <br/>You can expand this information consulting our <a href="../pages/pageNotFound.html">Cookies Policy Page</a>.</p>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn button" id="accept">Accept</button>
+                </div>
             </div>
         </div>
     </div>
     <script src="../js/script.js"></script>
-    <script>
 
-    $( document ).ready(function() {
-        // $( window ).load(function() {
-        //     if ($('.filter-results .item').length > 8) {
-        //     $('.filter-results .item:gt(3)').show();
-        //     $('.filter-results .item:gt(3)').next().addClass('hide');
-        //     $('.show-more-services').show();
-        //     }
-        // });
-        
-            
-        //     $('.show-more-services').on('click', function() {
-        //     $('.filter-results .item:gt(8)').toggle();
-        //     $(this).text() === 'Show more' ? $(this).text('Show less') : $(this).text('Show more');
-        //     });
-
-        $('.show-more-services').click(function () {
-        $('.filter-results .item:hidden').slice(0, 8).show();
-        
-         $(this).hide();
-    });
-    });
-       
-    </script>
 </body>
 
 </html>
