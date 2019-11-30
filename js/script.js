@@ -18,22 +18,22 @@ window.onload = function() {
     });
   }
 
-  var promise = get("json/popularItems.json");
+  var promise = get("js/popularItems.json");
 
   promise.then(items => {
     showData(items.products);
   });
 
-  var promiseFeatured = get("json/featuredProducts.json");
+  var promiseFeatured = get("js/featuredProducts.json");
 
   promiseFeatured.then(items => displayFeaturedProducts(items.products));
 
-  var services = get("json/popularItems.json");
+  var services = get("js/popularItems.json");
   services.then(items => {
     displayServicesProduct(items.products);
   });
 
-  var popularItems = get("../json/featuredProducts.json");
+  var popularItems = get("/js/featuredProducts.json");
   popularItems.then(items => displayLastFourItems(items.products));
 };
 
@@ -313,7 +313,7 @@ function displayServicesProduct(data) {
     div.classList.add("col-sm-12", "col-md-6", "col-lg-3", "item");
 
     div.innerHTML = `<div class="item_wrap">
-  <a href="../pages/product.html"><img src="/images/${item.image}.png" alt="${item.name}"></a>
+  <a href="../pages/product.html"><img src="images/${item.image}.png" alt="${item.name}"></a>
       <div class="item_caption">
       <span class="item-title"><a href="../pages/product.html">${item.name}</a></span>
       <span class="price">$ ${item.price}</span>
